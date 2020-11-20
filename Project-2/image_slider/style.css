@@ -64,3 +64,13 @@ h1 {
 .content h2 {
     padding-bottom: 10px;
 }
+
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 35px;
+    color: rgba(226, 215, 215, 0.7);
+    cursor: pointer;
+}
+
