@@ -25,8 +25,8 @@ h1 {
 }
 
 .slides {
-  display: flex;
-  position: relative;
+    display: flex;
+    position: relative;
 }
 
 .slide-item {
@@ -34,7 +34,7 @@ h1 {
     background-size: cover;
     background-position: 50% 50%;
     height: 550px;
-    width: 800px;
+    width: 1055px;
 }
 
 
