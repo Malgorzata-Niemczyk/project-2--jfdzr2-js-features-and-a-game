@@ -1,5 +1,5 @@
 //background images
-const imgElements = document.querySelectorAll('.slide-item');
+const slideElements = document.querySelectorAll('.slide-item');
 
 //buttons
 const prevBtnElement = document.querySelector('.previous-bt');
