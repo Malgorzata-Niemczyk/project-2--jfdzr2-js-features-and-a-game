@@ -18,7 +18,7 @@ h1 {
 }
 
 .slides-container {
-    width: 70%;
+    width: 60%;
     overflow: hidden;
     margin: auto;
     border: 2px solid #000;
@@ -26,6 +26,7 @@ h1 {
 
 .slides {
   display: flex;
+  position: relative;
 }
 
 .slide-item {
@@ -79,10 +80,21 @@ h1 {
 
 
 button {
+    position: absolute;
     background-color: transparent;
     border: none;
     font-size: 35px;
-    color: rgba(226, 215, 215, 0.7);
+    color: rgba(102, 211, 211, 0.7);
     cursor: pointer;
+}
+
+.previous-btn {
+    top: 33%;
+    left: 22%;
+}
+
+.next-btn {
+    top: 33%;
+    right: 22%;
 }
 
