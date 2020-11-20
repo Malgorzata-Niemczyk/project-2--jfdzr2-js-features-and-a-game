@@ -33,7 +33,7 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    height: 500px;
+    height: 550px;
     width: 800px;
 }
 
@@ -68,7 +68,7 @@ h1 {
 
 .content {
     position: relative;
-    top: 300px;
+    top: 330px;
     width: 450px;
     background-color: rgba(189, 179, 179, 0.7);
     padding: 30px;
