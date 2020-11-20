@@ -104,17 +104,22 @@ button {
     background-color: transparent;
     border: none;
     font-size: 35px;
-    color: rgba(189, 179, 179, 0.7);
+    color: #fff;
     cursor: pointer;
+    transition: color 0.3s;
+}
+
+button:hover {
+    color: rgb(149, 250, 136);
 }
 
 .previous-btn {
-    top: 48%;
-    left: 12%;
+    top: 38%;
+    left: 22%;
 }
 
 .next-btn {
-    top: 48%;
-    right: 12%;
+    top: 38%;
+    right: 22%;
 }
 
