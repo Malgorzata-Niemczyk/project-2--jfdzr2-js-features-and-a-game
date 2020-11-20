@@ -1,4 +1,6 @@
-//background images
+const slidesWrapper = document.querySelector('.slides-carousel');
+
+//background images 
 const slideElements = document.querySelectorAll('.slide-item');
 
 //buttons
