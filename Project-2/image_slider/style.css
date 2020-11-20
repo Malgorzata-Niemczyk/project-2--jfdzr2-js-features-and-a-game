@@ -17,6 +17,14 @@ h1 {
     text-shadow: 3px 3px 3px #000;
 }
 
+.slide-item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 500px;
+    width: 800px;
+}
+
 .slide-1 {
     background-image: url('./img/prague-2192419_640.jpg');
 }
