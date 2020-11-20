@@ -52,3 +52,15 @@ h1 {
 .slide-7 {
     background-image: url('./img//spring-3389422_640.jpg');
 }
+
+.content {
+    position: relative;
+    top: 300px;
+    width: 450px;
+    background-color: rgba(189, 179, 179, 0.7);
+    padding: 30px;
+}
+
+.content h2 {
+    padding-bottom: 10px;
+}
