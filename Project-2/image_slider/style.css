@@ -9,3 +9,38 @@ body {
     background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
+h1 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+    text-shadow: 3px 3px 3px #000;
+}
+
+.slide-1 {
+    background-image: url('./img/prague-2192419_640.jpg');
+}
+
+.slide-2 {
+    background-image: url('./img/bridge-4976386_640.jpg');
+}
+
+.slide-3 {
+    background-image: url('./img/patagonia-5354728_640.jpg');
+}
+
+.slide-4 {
+    background-image: url('./img/rower-4347495_640.jpg');
+}
+
+.slide-5 {
+    background-image: url('./img/solely-5082741_640.jpg');
+}
+
+.slide-6 {
+    background-image: url('./img/waterfall-841319_640.jpg');
+}
+
+.slide-7 {
+    background-image: url('./img//spring-3389422_640.jpg');
+}
