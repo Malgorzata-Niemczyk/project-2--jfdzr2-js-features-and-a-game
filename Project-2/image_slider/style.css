@@ -29,6 +29,7 @@ h1 {
 .slides-carousel {
     display: inline-flex;
     position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 
 .slide-item {

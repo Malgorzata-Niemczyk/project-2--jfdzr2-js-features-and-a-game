@@ -12,7 +12,6 @@ const slideWidth = 955;
 
 //Functions
 function nextSlide() {
-    slidesWrapper.style.transition = 'transform 0.3s ease-in-out';
     counter++;
     slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
 };
