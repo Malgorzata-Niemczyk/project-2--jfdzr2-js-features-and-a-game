@@ -4,7 +4,7 @@ const slidesWrapper = document.querySelector('.slides-carousel');
 const slideElements = document.querySelectorAll('.slide-item');
 
 //buttons
-const prevBtnElement = document.querySelector('.previous-bt');
+const prevBtnElement = document.querySelector('.previous-btn');
 const nextBtnElement = document.querySelector('.next-btn');
 
 let counter = 1;
@@ -16,10 +16,11 @@ function nextSlide() {
     slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
 };
 
-//function prevSlide() {
-
-//}
+function prevSlide() {
+    counter--;
+    slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
+}
 
 //Buttons events 
 nextBtnElement.addEventListener('click', nextSlide);
-//prevBtnElement.addEventListener('click', prevSlide)
+prevBtnElement.addEventListener('click', prevSlide);
