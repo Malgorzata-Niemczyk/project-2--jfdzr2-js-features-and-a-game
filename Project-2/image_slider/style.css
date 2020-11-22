@@ -27,13 +27,13 @@ h1 {
 }
 
 .slides-carousel {
-    display: flex;
+    display: inline-flex;
     position: relative;
 }
 
 .slide-item {
     height: 550px;
-    width: 850px;
+    width: 955px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%; 
