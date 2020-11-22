@@ -8,8 +8,13 @@ const prevBtnElement = document.querySelector('.previous-bt');
 const nextBtnElement = document.querySelector('.next-btn');
 
 //Functions
+function nextSlide() {
 
+}
 
+function prevSlide() {
+    
+}
 
 //Buttons events 
 nextBtnElement.addEventListener('click', nextSlide)
