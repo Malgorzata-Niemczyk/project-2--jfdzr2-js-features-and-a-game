@@ -13,7 +13,7 @@ h1 {
     display: flex;
     justify-content: center;
     padding: 20px;
-    color: #fff;
+    color: rgb(250, 163, 136);
     text-shadow: 3px 3px 3px #000;
 }
 
@@ -22,6 +22,8 @@ h1 {
     overflow: hidden;
     margin: auto;
     border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgb(250, 163, 136);
 }
 
 .slides-carousel {
@@ -30,11 +32,11 @@ h1 {
 }
 
 .slide-item {
+    height: 550px;
+    width: 850px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 50%;
-    height: 550px;
-    width: 1055px;
+    background-position: 50% 50%; 
 }
 
 
@@ -110,17 +112,23 @@ button {
     transition: color 0.3s;
 }
 
+button > i:active {
+ text-shadow: 2px 2px #fff;
+}
+
 button:hover {
-    color: rgb(149, 250, 136);
+    color: rgb(250, 163, 136);
 }
 
 .previous-btn {
-    top: 38%;
+    top: 50%;
     left: 22%;
+    transform: translateY(-50%);
 }
 
 .next-btn {
-    top: 38%;
+    top: 50%;
     right: 22%;
+    transform: translateY(-50%);
 }
 
