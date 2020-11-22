@@ -121,14 +121,12 @@ button:hover {
 }
 
 .previous-btn {
-    top: 50%;
+    top: 38%;
     left: 22%;
-    transform: translateY(-50%);
 }
 
 .next-btn {
-    top: 50%;
+    top: 38%;
     right: 22%;
-    transform: translateY(-50%);
 }
 
