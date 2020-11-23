@@ -1,5 +1,6 @@
 const slidesWrapper = document.querySelector('.slides-carousel');
 const textElements = document.querySelectorAll('.content');
+const textElementsArr = Array.from(textElements);
 
 //background images 
 const slideElements = document.querySelectorAll('.slide-item');
@@ -16,6 +17,7 @@ const slideWidth = 965;
 function nextSlide() {
     if (counter >= slideElementsArr.length -1) return;
     slidesWrapper.classList.add('slides-carousel-transition');
+    textElementsArr.forEach(el => {el.classList.add('animated-content')});
     counter++;
     slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
 };
@@ -23,6 +25,7 @@ function nextSlide() {
 function prevSlide() {
     if (counter <= 0) return;
     slidesWrapper.classList.add('slides-carousel-transition');
+    textElementsArr.forEach(el => {el.classList.add('animated-content')});
     counter--;
     slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
 }
