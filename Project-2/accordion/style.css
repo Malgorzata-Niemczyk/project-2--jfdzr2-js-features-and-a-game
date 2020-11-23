@@ -28,6 +28,8 @@ header h1 {
 
 .accordion-item {
     margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #000;
 }
 
 .accordion-item-header {
@@ -39,6 +41,8 @@ header h1 {
     text-shadow: 2px 2px 3px #000;
     background-color: #ebcb00;
     background: linear-gradient(to right, #ebcb00 0%, #e15151 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     cursor: pointer;
 }
 
@@ -49,11 +53,15 @@ header h1 {
 .accordion-item-content {
     padding: 20px;
     background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
 .accordion-item-content h3 {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
 .accordion-item-content ul li {
     list-style-position: inside;
 }
