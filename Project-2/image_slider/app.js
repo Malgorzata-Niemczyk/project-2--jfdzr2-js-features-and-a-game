@@ -14,12 +14,14 @@ const slideWidth = 965;
 
 //Functions
 function nextSlide() {
+    if (counter >= slideElementsArr.length -1) return;
     slidesWrapper.classList.add('slides-carousel-transition');
     counter++;
     slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
 };
 
 function prevSlide() {
+    if (counter <= 0) return;
     slidesWrapper.classList.add('slides-carousel-transition');
     counter--;
     slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
