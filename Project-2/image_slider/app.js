@@ -25,6 +25,19 @@ function prevSlide() {
     slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
 }
 
+function transitionLoop() {
+    if (slideElementsArr[counter].id === 'slide-last-copy') {
+        slidesWrapper.classList.remove('slides-carousel-transition');
+        counter = slideElementsArr.length -2;
+        slidesWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
+    }
+
+    if (slideElementsArr[counter].id === 'slide-first-copy') {
+        slidesWrapper.classList.remove('slides-carousel-transition');
+        counter = slideElementsArr.length - counter;
+        slidesWrapper.style.transform = `translateX(${-slideWidth * counter})`;
+    }
+}
 
 //Buttons events 
 nextBtnElement.addEventListener('click', nextSlide);
