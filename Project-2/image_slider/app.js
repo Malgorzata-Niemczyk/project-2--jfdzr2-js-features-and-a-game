@@ -1,4 +1,5 @@
 const slidesWrapper = document.querySelector('.slides-carousel');
+const textElements = document.querySelectorAll('.content');
 
 //background images 
 const slideElements = document.querySelectorAll('.slide-item');
@@ -8,7 +9,7 @@ const prevBtnElement = document.querySelector('.previous-btn');
 const nextBtnElement = document.querySelector('.next-btn');
 
 let counter = 1;
-const slideWidth = 955;
+const slideWidth = 965;
 
 //Functions
 function nextSlide() {
