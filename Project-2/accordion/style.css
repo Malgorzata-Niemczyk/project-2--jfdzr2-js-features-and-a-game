@@ -24,10 +24,36 @@ header h1 {
     width: 80%;
     max-width: 1000px;
     margin: auto;
-    padding: 25px;
-    background-color: #fff;
 }
 
+.accordion-item {
+    margin-bottom: 15px;
+}
+
+.accordion-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000;
+    background-color: #ebcb00;
+    background: linear-gradient(to right, #ebcb00 0%, #e15151 100%);
+    cursor: pointer;
+}
+
+.accordion-item-header p i {
+    font-size: 25px;
+}
+
+.accordion-item-content {
+    padding: 20px;
+    background-color: #fff;
+}
+.accordion-item-content h3 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 .accordion-item-content ul li {
     list-style-position: inside;
 }
