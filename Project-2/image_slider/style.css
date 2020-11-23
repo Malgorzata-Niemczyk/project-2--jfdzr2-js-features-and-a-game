@@ -17,8 +17,12 @@ h1 {
     text-shadow: 3px 3px 3px #000;
 }
 
+h1 span {
+    color: #fff;
+    font-weight: 500;
+}
 .slides-container {
-    max-width: 60%;
+    width: 60%;
     overflow: hidden;
     margin: auto;
     border: 2px solid #000;
@@ -34,7 +38,7 @@ h1 {
 
 .slide-item {
     height: 550px;
-    width: 955px;
+    width: 965px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%; 
@@ -111,6 +115,7 @@ button {
     color: #fff;
     cursor: pointer;
     transition: color 0.3s;
+    z-index: 5;
 }
 
 button > i:active {
