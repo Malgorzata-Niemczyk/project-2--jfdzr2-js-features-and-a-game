@@ -6,4 +6,28 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+    background-image: url('./img/vegies-2364221_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000;
+    padding: 20px;
+}
+.accordion-wrapper {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+    background-color: #fff;
+}
+
+.accordion-item-content ul li {
+    list-style-position: inside;
 }
