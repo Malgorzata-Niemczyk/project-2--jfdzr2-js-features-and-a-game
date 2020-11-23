@@ -18,7 +18,8 @@ header h1 {
     justify-content: center;
     color: #fff;
     text-shadow: 2px 2px 3px #000;
-    padding: 20px;
+    padding: 35px;
+    font-size: 50px;
 }
 .accordion-wrapper {
     width: 80%;
@@ -44,11 +45,17 @@ header h1 {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .accordion-item-header p i {
     font-size: 25px;
     transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item-header.active {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .accordion-item-header.active p i {
