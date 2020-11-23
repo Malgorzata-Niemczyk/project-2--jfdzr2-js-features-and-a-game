@@ -33,6 +33,9 @@ h1 span {
 .slides-carousel {
     display: inline-flex;
     position: relative;
+}
+
+.slides-carousel-transition {
     transition: transform 0.3s ease-in-out;
 }
 
