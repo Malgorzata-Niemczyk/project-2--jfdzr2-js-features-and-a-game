@@ -40,12 +40,20 @@ header h1 {
     padding: 20px;
     color: #fff;
     text-shadow: 2px 2px 3px #000;
-    background-color: #ebcb00;
-    background: linear-gradient(to right, #ebcb00 0%, #e15151 100%);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item:nth-child(odd) {
+    background-color: #ebcb00;
+    background: linear-gradient(to right, #ebcb00 0%, #e15151 100%);
+}
+
+.accordion-item:nth-child(even) {
+    background-color: #010104;
+    background: linear-gradient(to right, #010104 0%, #cec5c9 100%);
 }
 
 .accordion-item-header p i {
