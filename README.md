@@ -10,6 +10,6 @@
 
 ![](screenshots/accordion.png)
 
-This is a 7 week long project built during my second module at InfoShare Academy. The project goal is to build at least two mini apps and a game using JavaScript.
+This is a 7 week long project, on which I am currently working, during my second module at InfoShare Academy. The project goal is to build at least two mini apps and a game using JavaScript.
 
-The project is still in progress. So far I have built an accordion and a slider.
+So far I have built an accordion and a slider.
