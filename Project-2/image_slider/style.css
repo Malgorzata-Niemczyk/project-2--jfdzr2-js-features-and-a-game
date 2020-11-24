@@ -36,7 +36,7 @@ h1 span {
     position: relative;
 }
 
-.slides-carousel-transition {
+.slides-carousel.transition-effect {
     transition: transform 0.3s ease-in-out;
 }
 
@@ -85,7 +85,7 @@ h1 span {
     padding: 30px;
 }
 
-.content-animation {
+.content.animation-effect {
 	animation: slide-in-elliptic-bottom-fwd 0.4s linear;
 }
 
