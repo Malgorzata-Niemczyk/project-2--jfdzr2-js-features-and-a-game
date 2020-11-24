@@ -70,7 +70,7 @@ header h1 {
     transform: rotate(180deg);  
 }
 
-.accordion-item-content {
+.accordion-item-body-content {
     padding: 20px;
     background-color: #fff;
     border-bottom-left-radius: 10px;
@@ -78,11 +78,11 @@ header h1 {
     border-top: 2px solid black;
 }
 
-.accordion-item-content h3 {
+.accordion-item-body-content h3 {
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.accordion-item-content ul li {
+.accordion-item-body-content ul li {
     list-style-position: inside;
 }
