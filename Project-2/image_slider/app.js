@@ -15,7 +15,9 @@ const slideWidth = 965;
 
 //Functions to change images left and right when clicking on arrow buttons
 function nextSlide() {
-    if (counter >= slideElementsArr.length -1) return;
+    if (counter === slideElementsArr.length) {
+        counter = -1;
+    };
 
     slidesWrapper.classList.add('transition-effect');
 
@@ -33,7 +35,9 @@ function nextSlide() {
 };
 
 function prevSlide() {
-    if (counter <= 0) return;
+    if (counter === 0) {
+        counter = 7;
+    };
 
     slidesWrapper.classList.add('transition-effect');
     
