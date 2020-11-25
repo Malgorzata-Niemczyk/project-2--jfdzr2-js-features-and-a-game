@@ -133,6 +133,7 @@ h1 span {
 
 button {
     position: absolute;
+    top: 42%;
     background-color: transparent;
     border: none;
     outline: none;
@@ -152,12 +153,10 @@ button:hover {
 }
 
 .previous-btn {
-    top: 42%;
     left: 22%;
 }
 
 .next-btn {
-    top: 42%;
     right: 22%;
 }
 
