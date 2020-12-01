@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
+    background-image: url('./img/coffee-1128136_1920.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
