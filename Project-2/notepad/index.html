@@ -30,7 +30,27 @@
        </div> 
     </main>
 
-    
+    <div class="note-panel">
+        <h2>Add a note</h2>
+        <label for="category">Choose a category</label>
+        <select id="category">
+            <option value="0" disabled selected>- Choose a category -</option>
+            <option value="1">Shopping</option>
+            <option value="1">Work</option>
+            <option value="1">Friends</option>
+            <option value="1">Other</option>
+        </select>
+
+        <label for="text">Insert the content of your note</label>
+        <textarea id="text"></textarea>
+
+        <p class="error">Fill in all the spaces!</p>
+
+        <div class="panel-buttons">
+            <button class="save icon"><i class="fas fa-save"></i> Save</button>
+            <button class="cancel icon"><i class="far fa-window-close"></i> Cancel</button>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
