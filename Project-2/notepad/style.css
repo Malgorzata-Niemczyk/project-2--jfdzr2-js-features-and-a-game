@@ -12,3 +12,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding: 40px;
+}
