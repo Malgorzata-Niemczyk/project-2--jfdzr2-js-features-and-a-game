@@ -20,3 +20,21 @@ body {
     height: 120px;
     padding: 40px;
 }
+
+.menu button, .panel-buttons button {
+    padding: 12px 25px;
+    background: rgb(204, 204, 204);
+    border: 1px solid #999;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.menu button:hover, .panel-buttons button:hover {
+    background-color: #333;
+    color: #ddd;
+}
+
+.icon {
+    margin-right: 20px;
+}
