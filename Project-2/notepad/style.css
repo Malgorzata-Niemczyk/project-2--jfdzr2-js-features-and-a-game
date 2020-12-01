@@ -38,3 +38,38 @@ body {
 .icon {
     margin-right: 20px;
 }
+
+.note-area {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.note {
+    margin: 40px 20px;
+    width: 240px;
+    background-color:orange;
+    border: 1px solid black;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.note-header .delete-note {
+    text-align: centertime;
+    background: none;
+    border: none;
+    font-size: 23px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.note-header .delete-note:hover {
+    transform: rotate(45deg);
+}
