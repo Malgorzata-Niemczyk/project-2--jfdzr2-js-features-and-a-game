@@ -123,3 +123,19 @@ body {
     color: red;
     visibility: hidden;
 }
+
+@media screen and (max-width: 563px) {
+    .menu {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .menu h1, .menu-buttons {
+        margin-top: 20px;
+    }
+    
+    .menu-buttons .add {
+        margin-bottom: 10px;
+    }
+}
