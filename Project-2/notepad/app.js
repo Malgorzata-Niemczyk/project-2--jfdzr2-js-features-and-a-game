@@ -6,3 +6,9 @@ const cancelBtn = document.querySelector('.cancel');
 
 const noteArea = ocument.querySelector('.note-area');
 const notePanel = document.querySelector('.note-panel');
+const categorySelection = document.querySelector('#category');
+const textArea = document.querySelector('#text'); 
+const errorMessage = document.querySelector('.error');
+
+let $selectedValue;
+let $cardID = 0;
