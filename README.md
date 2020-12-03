@@ -10,7 +10,7 @@
 
 ![](screenshots/accordion.png)
 
-[Link to Feature 3](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/notepad.index.html) - Notepad (WIP)
+[Link to Feature 3](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/notepad/index.html) - Notepad (WIP)
 
 ![](screenshots/my-awesome-notes.png)
 
