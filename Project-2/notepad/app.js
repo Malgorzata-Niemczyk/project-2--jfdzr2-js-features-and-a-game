@@ -26,6 +26,17 @@ function closePanel() {
     errorMessage.style.visibility = 'hidden';
 };
 
+function addNote() {
+    const optionValue = categorySelection.options[categorySelection.selectedIndex].value
+
+    if (textArea.value !== '' && optionValue !== 0) {
+        errorMessage.style.visibility = 'hidden'
+    } else {
+        errorMessage.style.visibility = 'visible'
+    }
+};
+
 //event listeners
 addBtn.addEventListener('click', openPanel);
-cancelBtn.addEventListener('click', closePanel)
+cancelBtn.addEventListener('click', closePanel);
+saveBtn.addEventListener('click', addNote);
