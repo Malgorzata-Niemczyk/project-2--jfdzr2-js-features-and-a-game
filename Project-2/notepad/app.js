@@ -30,10 +30,19 @@ function addNote() {
     const optionValue = categorySelection.options[categorySelection.selectedIndex].value
 
     if (textArea.value !== '' && optionValue !== 0) {
-        errorMessage.style.visibility = 'hidden'
+        createNote();
+        errorMessage.style.visibility = 'hidden';
     } else {
-        errorMessage.style.visibility = 'visible'
+        errorMessage.style.visibility = 'visible';
     }
+};
+
+const createNote = () => {
+    $cardID++;
+    const noteWrapper = document.createElement('div');
+    noteWrapper.classList.add('note');
+    noteWrapper.setAttribute('id', $cardID);
+    noteArea.appendChild(noteWrapper);
 };
 
 //event listeners
