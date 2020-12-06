@@ -43,6 +43,14 @@ const createNote = () => {
     noteWrapper.classList.add('note');
     noteWrapper.setAttribute('id', $cardID);
     noteArea.appendChild(noteWrapper);
+
+    let noteHeader = document.createElement('div');
+    noteHeader.classList.add('note-header');
+    noteWrapper.appendChild(noteHeader);
+
+    let noteTitle = document.createElement('h3');
+    noteTitle.innerText = `Note #${$cardID}`;
+    noteHeader.appendChild(noteTitle);
 };
 
 //event listeners
