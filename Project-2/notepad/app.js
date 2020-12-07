@@ -41,10 +41,11 @@ const createNote = () => {
     const noteWrapper = document.createElement('div');
     noteWrapper.classList.add('note');
     noteWrapper.setAttribute('id', $cardID);
+    noteArea.appendChild(noteWrapper);
     
     noteWrapper.innerHTML = `
         <div class="note-header">
-            <h3 class="note-title"></h3>
+            <h3 class="note-title">${$selectedValue}</h3>
             <button class="delete-note">
                 <i class="far fa-times-circle"></i>
             </button>
@@ -53,10 +54,18 @@ const createNote = () => {
             <p>${textArea.value}</p>
         </div>
     `
-    noteArea.appendChild(noteWrapper);
+
+    textArea.value = '';
+    categorySelection.selectedIndex = 0;
+    notePanel.style.display = 'none';
+};
+
+const selectValue = () => {
+    $selectedValue = categorySelection.options[categorySelection.selectedIndex].text;
 };
 
 //event listeners
 addBtn.addEventListener('click', openPanel);
 cancelBtn.addEventListener('click', closePanel);
 saveBtn.addEventListener('click', addNote);
+categorySelection.addEventListener('change', selectValue);
