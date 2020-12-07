@@ -67,7 +67,6 @@ const createNote = () => {
 //function for assinging the value to the global variable $selectedValue
 const selectValue = () => {
     $selectedValue = categorySelection.options[categorySelection.selectedIndex].text;
-    
 };
 
 /*function that checks what text has been chosen within the $selectedValue element and dependent on the value of the $selectedvalue variable it changes the color of a new note added to the noteArea*/
