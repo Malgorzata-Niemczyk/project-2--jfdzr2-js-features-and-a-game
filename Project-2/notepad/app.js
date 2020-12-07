@@ -1,6 +1,5 @@
 const addBtn = document.querySelector('.add');
 const deleteAllBtn = document.querySelector('.delete-all');
-const deleteNoteBtn = document.getElementsByClassName('delete-note');
 const saveBtn = document.querySelector('.save');
 const cancelBtn = document.querySelector('.cancel');
 
@@ -51,6 +50,16 @@ const createNote = () => {
     let noteTitle = document.createElement('h3');
     noteTitle.innerText = `Note #${$cardID}`;
     noteHeader.appendChild(noteTitle);
+
+    let deleteNoteBtn = document.createElement('button');
+    deleteNoteBtn.classList.add('delete-note');
+    noteHeader.appendChild(deleteNoteBtn);
+    deleteNoteBtn.innerHTML = '<i class="far fa-times-circle"></i>';
+
+    let noteBody = document.createElement('div');
+    noteBody.classList.add('note-body');
+    noteWrapper.appendChild(noteBody);
+    noteBody.innerHTML = `<p>${textArea.value}</p>`;
 };
 
 //event listeners
