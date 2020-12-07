@@ -41,25 +41,19 @@ const createNote = () => {
     const noteWrapper = document.createElement('div');
     noteWrapper.classList.add('note');
     noteWrapper.setAttribute('id', $cardID);
+    
+    noteWrapper.innerHTML = `
+        <div class="note-header">
+            <h3 class="note-title"></h3>
+            <button class="delete-note">
+                <i class="far fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="note-body">
+            <p>${textArea.value}</p>
+        </div>
+    `
     noteArea.appendChild(noteWrapper);
-
-    let noteHeader = document.createElement('div');
-    noteHeader.classList.add('note-header');
-    noteWrapper.appendChild(noteHeader);
-
-    let noteTitle = document.createElement('h3');
-    noteTitle.innerText = `Note #${$cardID}`;
-    noteHeader.appendChild(noteTitle);
-
-    let deleteNoteBtn = document.createElement('button');
-    deleteNoteBtn.classList.add('delete-note');
-    noteHeader.appendChild(deleteNoteBtn);
-    deleteNoteBtn.innerHTML = '<i class="far fa-times-circle"></i>';
-
-    let noteBody = document.createElement('div');
-    noteBody.classList.add('note-body');
-    noteWrapper.appendChild(noteBody);
-    noteBody.innerHTML = `<p>${textArea.value}</p>`;
 };
 
 //event listeners
