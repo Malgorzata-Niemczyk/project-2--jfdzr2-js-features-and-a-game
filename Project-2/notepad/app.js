@@ -48,7 +48,7 @@ const createNote = () => {
     noteWrapper.innerHTML = `
         <div class="note-header">
             <h3 class="note-title">${$selectedValue}</h3>
-            <button class="delete-note">
+            <button class="delete-note" onclick="deleteNote(${$cardID})">
                 <i class="far fa-times-circle"></i>
             </button>
         </div>
@@ -88,11 +88,16 @@ const checkColor = (note) => {
     };
 };
 
+//deleting a single note
+function deleteNote(id) {
+    const noteToBeDeleted = document.getElementById(id);
+    noteArea.removeChild(noteToBeDeleted);
+};
 
 //deleting all the notes from the div with a class of note-area
 function deleteAllNotes() {
     noteArea.textContent = '';
-}
+};
 
 //event listeners
 addBtn.addEventListener('click', openPanel);
