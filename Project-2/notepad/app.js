@@ -25,6 +25,7 @@ function closePanel() {
     errorMessage.style.visibility = 'hidden';
 };
 
+/*function fo addding a new note, it add a new not on condition that the textArea.value is not equal to an empty string and the the option value of the categorySelection element is not equal to zero*/
 function addNote() {
     const optionValue = categorySelection.options[categorySelection.selectedIndex].value
 
@@ -36,6 +37,7 @@ function addNote() {
     }
 };
 
+/*function for creating a new note and appending it to the div tag with a class of note; upon adding a new note when clicking the save button the function also clears the value of the textArea, sets display of the notePanel to none and set the selectedIndex of the categorySelection element to zero*/
 const createNote = () => {
     $cardID++;
     const noteWrapper = document.createElement('div');
@@ -58,11 +60,34 @@ const createNote = () => {
     textArea.value = '';
     categorySelection.selectedIndex = 0;
     notePanel.style.display = 'none';
+
+    checkColor(noteWrapper);
 };
 
+//function for assinging the value to the global variable $selectedValue
 const selectValue = () => {
     $selectedValue = categorySelection.options[categorySelection.selectedIndex].text;
+    
 };
+
+/*function that checks what text has been chosen within the $selectedValue element and dependent on the value of the $selectedvalue variable it changes the color of a new note added to the noteArea*/
+const checkColor = (note) => {
+    switch ($selectedValue) {
+        case 'Shopping':
+            note.style.backgroundColor = 'orange';
+            break;
+        case 'Work':
+            note.style.backgroundColor = 'rgb(35, 215, 228)';
+            break;
+        case 'Friends':
+            note.style.backgroundColor = 'tomato';
+            break;
+        case 'Other':
+            note.style.backgroundColor = 'rgb(80, 230, 50)';
+            break;
+    };
+};
+
 
 //event listeners
 addBtn.addEventListener('click', openPanel);
