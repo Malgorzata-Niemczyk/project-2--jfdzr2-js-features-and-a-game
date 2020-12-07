@@ -88,7 +88,7 @@ const checkColor = (note) => {
     };
 };
 
-//deleting a single note
+/* deleting a single note by firstly grabbing an element with an id and then deleting it from a parent element, that is, the noteArea */
 function deleteNote(id) {
     const noteToBeDeleted = document.getElementById(id);
     noteArea.removeChild(noteToBeDeleted);
