@@ -61,7 +61,7 @@ const createNote = () => {
     categorySelection.selectedIndex = 0;
     notePanel.style.display = 'none';
 
-    checkColor(noteWrapper);
+    checkColor(noteWrapper); /* triggering the  CheckColor function that checks what value is stored in the $selectedValue variable when creating a new note */
 };
 
 //function for assinging the value to the global variable $selectedValue
@@ -89,8 +89,14 @@ const checkColor = (note) => {
 };
 
 
+//deleting all the notes from the div with a class of note-area
+function deleteAllNotes() {
+    noteArea.textContent = '';
+}
+
 //event listeners
 addBtn.addEventListener('click', openPanel);
 cancelBtn.addEventListener('click', closePanel);
 saveBtn.addEventListener('click', addNote);
 categorySelection.addEventListener('change', selectValue);
+deleteAllBtn.addEventListener('click', deleteAllNotes);
