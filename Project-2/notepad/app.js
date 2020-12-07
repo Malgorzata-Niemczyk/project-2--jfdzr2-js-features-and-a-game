@@ -28,7 +28,7 @@ function closePanel() {
 function addNote() {
     const optionValue = categorySelection.options[categorySelection.selectedIndex].value
 
-    if (textArea.value !== '' && optionValue !== 0) {
+    if (textArea.value !== '' && optionValue !== '0') {
         createNote();
         errorMessage.style.visibility = 'hidden';
     } else {
