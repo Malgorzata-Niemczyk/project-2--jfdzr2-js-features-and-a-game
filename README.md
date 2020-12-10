@@ -2,6 +2,7 @@
 
 # jfdzr2-project-2
 
+
 [Link to Feature 1](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/image_slider/index.html) - Image Slider
 
 ![](screenshots/img-slider.png)
@@ -14,6 +15,9 @@
 
 ![](screenshots/my-awesome-notes.png)
 
+[Link to Game](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/game_sliding-tile-puzzle/index.html) - Sliding Tile Puzzle (WIP)
+
+
 This is a 7 week long project, on which I am currently working, during my second module at InfoShare Academy. The project goal is to build at least two mini apps and a game using JavaScript.
 
-So far I have built an accordion and a slider.
+So far I have built an accordion, a slider and a notepad.
