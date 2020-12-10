@@ -40,5 +40,50 @@ h1 {
     height: 150px;
     border: 1px solid #fff;
     margin-top: 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+#piece-1 {
+    background-image: url('./img/row-1-col-1.jpg');
+}
+
+
+#piece-2 {
+    background-image: url('./img/row-1-col-2.jpg');
+}
+
+
+#piece-3 {
+    background-image: url('./img/row-1-col-3.jpg');
+}
+
+
+#piece-4 {
+    background-image: url('./img/row-2-col-1.jpg');
+}
+
+
+#piece-5 {
+    background-image: url('./img/row-2-col-2.jpg');
+}
+
+
+#piece-6 {
+    background-image: url('./img/row-2-col-3.jpg');
+}
+
+
+#piece-7 {
+    background-image: url('./img/row-3-col-1.jpg');
+}
+
+
+#piece-8 {
+    background-image: url('./img/row-3-col-2.jpg');
+}
+
+
+#piece-9 {
+    background-color: rgb(212, 209, 205);
+}
