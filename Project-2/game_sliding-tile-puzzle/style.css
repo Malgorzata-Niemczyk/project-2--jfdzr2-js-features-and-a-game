@@ -89,3 +89,21 @@ h1 {
 #piece-33 {
     background-color: rgb(212, 209, 205);
 }
+
+#launch {
+    margin-top: 25px;
+    padding: 15px 25px;
+    background-color: #9e8fb2;
+    background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
+    box-shadow: 0px 0px 8px rgb(206, 202, 203);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+#launch:hover {
+    color: rgb(216, 212, 212);
+    background: rgb(66, 65, 65);
+}
