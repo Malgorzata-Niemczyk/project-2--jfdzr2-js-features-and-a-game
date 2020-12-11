@@ -19,9 +19,22 @@ body {
 }
 
 h1 {
-    color: rgb(250, 246, 246);
     text-shadow: -3px -3px 5px #000;
     text-align: center;
+}
+
+h1 span:first-child {
+    color: rgb(24, 238, 220);
+}
+
+h1 span:nth-child(2) {
+    font-size: 40px;
+    color: rgb(10, 187, 10);
+}
+
+h1 span:last-child {
+    font-size: 70px;
+    color: rgb(255, 71, 71);
 }
 
 #puzzle-container {
