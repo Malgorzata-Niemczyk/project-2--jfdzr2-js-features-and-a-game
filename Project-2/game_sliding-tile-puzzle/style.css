@@ -25,7 +25,7 @@ h1 {
     text-align: center;
 }
 
-#container {
+#puzzle-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -43,48 +43,49 @@ h1 {
     margin-top: 8px;
     background-size: cover;
     background-repeat: no-repeat;
+    font-size: 0.1px;
 }
 
-#piece-1 {
+#piece-11 {
     background-image: url('./img/row-1-col-1.jpg');
 }
 
 
-#piece-2 {
+#piece-12 {
     background-image: url('./img/row-1-col-2.jpg');
 }
 
 
-#piece-3 {
+#piece-13 {
     background-image: url('./img/row-1-col-3.jpg');
 }
 
 
-#piece-4 {
+#piece-21 {
     background-image: url('./img/row-2-col-1.jpg');
 }
 
 
-#piece-5 {
+#piece-22 {
     background-image: url('./img/row-2-col-2.jpg');
 }
 
 
-#piece-6 {
+#piece-23 {
     background-image: url('./img/row-2-col-3.jpg');
 }
 
 
-#piece-7 {
+#piece-31 {
     background-image: url('./img/row-3-col-1.jpg');
 }
 
 
-#piece-8 {
+#piece-32 {
     background-image: url('./img/row-3-col-2.jpg');
 }
 
 
-#piece-9 {
+#piece-33 {
     background-color: rgb(212, 209, 205);
 }
