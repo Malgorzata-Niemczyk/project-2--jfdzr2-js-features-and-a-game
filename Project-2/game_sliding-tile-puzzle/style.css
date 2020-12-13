@@ -1,124 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Langar&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.draggable {
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  background: white;
+}
+
+.dropzone {
+  width: 200px;
+  height: 200px;
+  background: blueviolet;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Langar', cursive;
-    font-size: 1.5rem;
-    background-color: #0cbaba;
-    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Langar", cursive;
+  font-size: 1.5rem;
+  background-color: #0cbaba;
+  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
 }
 
 h1 {
-    text-shadow: -3px -3px 5px #000;
-    text-align: center;
+  text-shadow: -3px -3px 5px #000;
+  text-align: center;
 }
 
 h1 span:first-child {
-    color: rgb(24, 238, 220);
+  color: rgb(24, 238, 220);
 }
 
 h1 span:nth-child(2) {
-    font-size: 40px;
-    color: rgb(10, 187, 10);
+  font-size: 40px;
+  color: rgb(10, 187, 10);
 }
 
 h1 span:last-child {
-    font-size: 70px;
-    color: rgb(255, 71, 71);
+  font-size: 70px;
+  color: rgb(255, 71, 71);
 }
 
 #puzzle-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 500px;
-    height: 500px;
-    background-color: #9e8fb2;
-    background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
-    box-shadow: 0px 0px 8px rgb(206, 202, 203);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 500px;
+  height: 500px;
+  background-color: #9e8fb2;
+  background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
+  box-shadow: 0px 0px 8px rgb(206, 202, 203);
 }
 
 .pieces {
-    width: 30%;
-    height: 150px;
-    border: 1px solid #fff;
-    margin-top: 8px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-size: 0.1px;
+  width: 30%;
+  height: 150px;
+  border: 1px solid #fff;
+  margin-top: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 0.1px;
 }
 
 #piece-11 {
-    background-image: url('./img/row-1-col-1.jpg');
+  background-image: url("./img/row-1-col-1.jpg");
 }
-
 
 #piece-12 {
-    background-image: url('./img/row-1-col-2.jpg');
+  background-image: url("./img/row-1-col-2.jpg");
 }
-
 
 #piece-13 {
-    background-image: url('./img/row-1-col-3.jpg');
+  background-image: url("./img/row-1-col-3.jpg");
 }
-
 
 #piece-21 {
-    background-image: url('./img/row-2-col-1.jpg');
+  background-image: url("./img/row-2-col-1.jpg");
 }
-
 
 #piece-22 {
-    background-image: url('./img/row-2-col-2.jpg');
+  background-image: url("./img/row-2-col-2.jpg");
 }
-
 
 #piece-23 {
-    background-image: url('./img/row-2-col-3.jpg');
+  background-image: url("./img/row-2-col-3.jpg");
 }
-
 
 #piece-31 {
-    background-image: url('./img/row-3-col-1.jpg');
+  background-image: url("./img/row-3-col-1.jpg");
 }
-
 
 #piece-32 {
-    background-image: url('./img/row-3-col-2.jpg');
+  background-image: url("./img/row-3-col-2.jpg");
 }
-
 
 #piece-33 {
-    background-color: rgb(212, 209, 205);
+  background-color: rgb(212, 209, 205);
 }
 
-#launch, #moves {
-    margin: 25px 10px;
-    padding: 15px 25px;
-    background-color: #9e8fb2;
-    background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
-    box-shadow: 0px 0px 8px rgb(206, 202, 203);
-    border: none;
-    border-radius: 10px;
+#launch,
+#moves {
+  margin: 25px 10px;
+  padding: 15px 25px;
+  background-color: #9e8fb2;
+  background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
+  box-shadow: 0px 0px 8px rgb(206, 202, 203);
+  border: none;
+  border-radius: 10px;
 }
 
-#launch{
-    cursor: pointer;
-    font-size: 20px;
-    transition: color 0.3s, background 0.3s;
+#launch {
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s, background 0.3s;
 }
 
 #launch:hover {
-    color: rgb(216, 212, 212);
-    background: rgb(66, 65, 65);
+  color: rgb(216, 212, 212);
+  background: rgb(66, 65, 65);
 }
