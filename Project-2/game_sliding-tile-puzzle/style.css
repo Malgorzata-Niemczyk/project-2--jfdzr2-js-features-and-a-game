@@ -38,19 +38,18 @@ h1 span:last-child {
 }
 
 #puzzle-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 500px;
-    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, minmax(200px, 5vw));
+    padding: 5px;
     background-color: #9e8fb2;
     background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
     box-shadow: 0px 0px 8px rgb(206, 202, 203);
 }
 
 .pieces {
-    width: 30%;
-    height: 150px;
+    width: 190px;
+    height: 190px;
     border: 1px solid #fff;
     margin-top: 8px;
     background-size: cover;
@@ -59,46 +58,64 @@ h1 span:last-child {
 }
 
 #piece-11 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     background-image: url('./img/row-1-col-1.jpg');
 }
 
 
 #piece-12 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     background-image: url('./img/row-1-col-2.jpg');
 }
 
 
 #piece-13 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
     background-image: url('./img/row-1-col-3.jpg');
 }
 
 
 #piece-21 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
     background-image: url('./img/row-2-col-1.jpg');
 }
 
 
 #piece-22 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
     background-image: url('./img/row-2-col-2.jpg');
 }
 
 
 #piece-23 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
     background-image: url('./img/row-2-col-3.jpg');
 }
 
 
 #piece-31 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
     background-image: url('./img/row-3-col-1.jpg');
 }
 
 
 #piece-32 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
     background-image: url('./img/row-3-col-2.jpg');
 }
 
 
 #piece-33 {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
     background-color: rgb(212, 209, 205);
 }
 
@@ -112,7 +129,7 @@ h1 span:last-child {
     border-radius: 10px;
 }
 
-#launch{
+#launch {
     cursor: pointer;
     font-size: 20px;
     transition: color 0.3s, background 0.3s;
