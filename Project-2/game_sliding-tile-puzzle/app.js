@@ -3,12 +3,12 @@ const dragstart_handler = ev => {
     console.log("dragstart")
     ev.dataTransfer.setData("text/plain", ev.target.id)
     ev.dataTransfer.dropEffect = "move";
-}
+};
 
 const dragover_handler = ev => {
     console.log("dragOver");
     ev.preventDefault();
-}
+};
 
 // getting the data stored in the dataTransfer object and then we ‘transferring’ it to the element in which we it is dropped onto
 const drop_handler = ev => {
@@ -19,16 +19,32 @@ const drop_handler = ev => {
     ev.target.innerText = document.getElementById(data).innerText;
 
     document.getElementById(data).innerText = "";
-}
+};
 
 // clearing the data stored in the dataTransfer when the drag event ends
 const dragend_handler = ev => {
   console.log("dragEnd");
   // Remove all of the drag data
   ev.dataTransfer.clearData();
-}
+};
 
-//select all the elements inside the div with an id of puzzle-container
+//selecting all the elements inside the div with an id of puzzle-container
 let tilesContainer = document.querySelectorAll('#puzzle-container > div');
+// console.log(tilesContainer)
 
-const tilesPosition = [11, 12, 13, 21, 22, 23, 31, 32, ''];
+const tileNums = [11, 12, 13, 21, 22, 23, 31, 32, ''];
+
+//setting a unique id for each div tag that is within the element with a class of puzzle-container
+const setID = (items) => {
+    for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('id', `div${id}`)
+    }
+}; 
+
+const fillGrid = (items, tileNums) => {
+    items.forEach((item, i) => {
+        item.innerText = tileNums[i];
+    })
+};
+
+fillGrid(tilesContainer, tileNums)
