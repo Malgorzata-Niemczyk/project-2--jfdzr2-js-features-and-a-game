@@ -37,13 +37,15 @@ const numbers = [11, 12, 13, 21, 22, 23, 31, 32, ''];
 //setting a unique id for each div tag that is within the element with a class of puzzle-container
 const setID = (items) => {
     for (i = 0; i < items.length; i++) {
-        items[i].setAttribute('id', `div${id}`)
+        items[i].setAttribute('id', `div${i}`)
     }
 }; 
 
 const fillGrid = (items, numbers) => {
+    let shuffled = shuffleTiles(numbers);
+
     items.forEach((item, i) => {
-        item.innerText = numbers[i];
+        item.innerText = shuffled[i];
     })
 };
 
@@ -51,7 +53,7 @@ fillGrid(tiles, numbers);
 
 
 //shuffing the 'numbers' array 
-const shuffleTiles = (arr) => {
+function shuffleTiles(arr) {
     const copiedNumbers = [...arr];
 
     // looping over 'numbers' array
@@ -67,3 +69,5 @@ const shuffleTiles = (arr) => {
     }
     return copiedNumbers
 };
+
+
