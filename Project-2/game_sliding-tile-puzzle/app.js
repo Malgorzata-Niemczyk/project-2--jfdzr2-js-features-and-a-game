@@ -47,4 +47,23 @@ const fillGrid = (items, numbers) => {
     })
 };
 
-fillGrid(tiles, numbers)
+fillGrid(tiles, numbers);
+
+
+//shuffing the 'numbers' array 
+const shuffleTiles = (arr) => {
+    const copiedNumbers = [...arr];
+
+    // looping over 'numbers' array
+    for (let i = 0; i < copiedNumbers.length; i++) {
+
+        //picking a random index j for each index i
+        let j = parseInt(Math.random() * copiedNumbers.length);
+
+        //swapping elements at i and j
+        let temp = copiedNumbers[i];
+        copiedNumbers[i] = copiedNumbers[j];
+        copiedNumbers[j] = temp;
+    }
+    return copiedNumbers
+};
