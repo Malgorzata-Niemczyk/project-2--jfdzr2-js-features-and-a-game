@@ -29,10 +29,10 @@ const dragend_handler = ev => {
 };
 
 //selecting all the elements inside the div with an id of puzzle-container
-let tilesContainer = document.querySelectorAll('#puzzle-container > div');
+let tiles = document.querySelectorAll('#puzzle-container > div');
 // console.log(tilesContainer)
 
-const tileNums = [11, 12, 13, 21, 22, 23, 31, 32, ''];
+const numbers = [11, 12, 13, 21, 22, 23, 31, 32, ''];
 
 //setting a unique id for each div tag that is within the element with a class of puzzle-container
 const setID = (items) => {
@@ -41,10 +41,10 @@ const setID = (items) => {
     }
 }; 
 
-const fillGrid = (items, tileNums) => {
+const fillGrid = (items, numbers) => {
     items.forEach((item, i) => {
-        item.innerText = tileNums[i];
+        item.innerText = numbers[i];
     })
 };
 
-fillGrid(tilesContainer, tileNums)
+fillGrid(tiles, numbers)
