@@ -35,8 +35,13 @@ puzzleBoard.addEventListener('click', (event) => {
                 }
             })
         });
-        console.log(x, y);
-        console.log(emptyX, emptyY);
+        
+        // switching the empty element with a clicked element
+        const tempPosition = gameState[x][y]; // assigning to the tempPosition the clicked element
+        gameState[x][y] = gameState[emptyX][emptyY];
+        gameState[emptyX][emptyY] = tempPosition;
+
+        console.log(gameState);
     };
 
     getPiecePosition()
