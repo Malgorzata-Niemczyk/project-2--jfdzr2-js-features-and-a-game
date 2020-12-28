@@ -58,7 +58,6 @@ h1 span:last-child {
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 40px;
-    background-color: rgb(129, 41, 129);
 }
 
 #piece-11 {
@@ -112,14 +111,6 @@ h1 span:last-child {
 #piece-33 {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    background-color: rgb(212, 209, 205);
-}
-
-.empty {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
     background-color: rgb(212, 209, 205);
 }
 
