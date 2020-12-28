@@ -8,8 +8,15 @@ const gameState = [
 ];
 
 
-puzzleBoard.addEventListener('click', (event) => {
+function loadPuzzleChange(puzzleBoard, gameState) {
+    gameState.forEach((row) => {
+        row.forEach((column) => {
+            puzzleBoard.appendChild(column);
+        })
+    })
+};
 
+puzzleBoard.addEventListener('click', (event) => {
 // searching for the clicked element - getting its position, that is, its row and column index
     function getPiecePosition() {
         let x;
@@ -35,14 +42,12 @@ puzzleBoard.addEventListener('click', (event) => {
                 }
             })
         });
-        
+
         // switching the empty element with a clicked element
         const tempPosition = gameState[x][y]; // assigning to the tempPosition the clicked element
         gameState[x][y] = gameState[emptyX][emptyY];
         gameState[emptyX][emptyY] = tempPosition;
-
-        console.log(gameState);
     };
 
-    getPiecePosition()
+    getPiecePosition();
 })
