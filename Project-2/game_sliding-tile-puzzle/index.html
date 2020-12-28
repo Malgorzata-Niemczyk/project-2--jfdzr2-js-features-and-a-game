@@ -6,7 +6,7 @@
     <title>Sliding Tile Puzzle</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body onload="setUpTheGame()">
     
     <h1><span>Sliding</span><span>Tile</span><span>Puzzle</span></h1>
 
@@ -20,8 +20,8 @@
         <div class="pieces" id="piece-22"></div>
         <div class="pieces" id="piece-23"></div>
         <div class="pieces" id="piece-31"></div>
-        <div class="pieces" id="piece-32" draggable="true" ondragstart="dragstart_handler(event)" ondragend="dragend_handler(event)">32</div>
-        <div class="pieces dropzone empty" id="piece-33" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">33</div>
+        <div class="pieces" id="piece-32" draggable="true" ondragstart="dragstart_handler(event)" ondragend="dragend_handler(event)"></div>
+        <div class="pieces dropzone" id="piece-33" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
     </article>
 
     <button id="launch">Start Game</button>
