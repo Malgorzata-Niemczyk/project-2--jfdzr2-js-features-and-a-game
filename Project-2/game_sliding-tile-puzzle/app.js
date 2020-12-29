@@ -21,6 +21,17 @@ function loadPuzzleChange(puzzleBoard, gameState) {
 
 loadPuzzleChange(puzzleBoard, gameState);
 
+function movePuzzlePiece(piece1, piece2) {
+    const tempTopPosition = piece1.style.top;
+    const tempLeftPosition = piece1.style.left;
+
+    piece1.style.top = piece2.style.top;
+    piece1.style.left = piece2.style.left;
+
+    piece2.style.top = tempTopPosition;
+    piece2.style.left = tempLeftPosition;
+};
+
 puzzleBoard.addEventListener('click', (event) => {
 // searching for the clicked element - getting its position, that is, its row and column index
     function getPiecePosition() {
@@ -53,11 +64,12 @@ puzzleBoard.addEventListener('click', (event) => {
             ((y === emptyY) && (x + 1 === emptyX || x - 1 === emptyX)) || 
             ((x === emptyX) && (y + 1 === emptyY || y - 1 === emptyY))
         ) {
+            movePuzzlePiece(gameState[x][y], gameState[emptyX][emptyY]);
+
              // switching the empty element with a clicked element
             const tempPosition = gameState[x][y]; // assigning the clicked element to the tempPosition 
             gameState[x][y] = gameState[emptyX][emptyY];
             gameState[emptyX][emptyY] = tempPosition;
-            loadPuzzleChange(puzzleBoard, gameState);
 
             console.log('This move is allowed');
         } else {
@@ -66,7 +78,6 @@ puzzleBoard.addEventListener('click', (event) => {
 
         console.log(gameState);
     };
-    
     
     getPiecePosition();
 })
