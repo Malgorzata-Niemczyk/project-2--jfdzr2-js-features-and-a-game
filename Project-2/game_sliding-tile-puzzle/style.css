@@ -50,6 +50,10 @@ h1 span:last-child {
 
 .pieces {
     position: absolute;
+    transform: translate(10px, 3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 200px;
     border: 2px solid #fff;
