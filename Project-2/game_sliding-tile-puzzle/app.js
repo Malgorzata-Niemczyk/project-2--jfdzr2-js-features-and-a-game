@@ -81,3 +81,25 @@ puzzleBoard.addEventListener('click', (event) => {
     
     getPiecePosition();
 })
+
+
+const newGameBtn = document.querySelector('#launch');
+
+const sufflePuzzlePieces = (gameState) =>  {
+  // looping over the gameState array
+  for (let i = 0; i < gameState.length; i++) {
+    let newPos = Math.floor(Math.random() * gameState.length);
+    let temp;
+    let currentGame = gameState[i];
+    let randomGame = gameState[newPos];
+
+    // swapping puzzle pieces
+    temp = currentGame;
+    gameState[i] = randomGame;
+    gameState[randomGame] = temp;
+  }
+
+  return gameState;
+}
+
+newGameBtn.addEventListener('click', sufflePuzzlePieces);
