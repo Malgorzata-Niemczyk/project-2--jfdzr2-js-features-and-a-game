@@ -48,20 +48,20 @@ puzzleBoard.addEventListener('click', (event) => {
             ((y === emptyY) && (x + 1 === emptyX || x - 1 === emptyX)) || 
             ((x === emptyX) && (y + 1 === emptyY || y - 1 === emptyY))
         ) {
+             // switching the empty element with a clicked element
+            const tempPosition = gameState[x][y]; // assigning the clicked element to the tempPosition 
+            gameState[x][y] = gameState[emptyX][emptyY];
+            gameState[emptyX][emptyY] = tempPosition;
+            loadPuzzleChange(puzzleBoard, gameState)
+
             console.log('This move is allowed');
         } else {
             console.log('This move is not allowed');
         };
 
-
-        // switching the empty element with a clicked element
-        const tempPosition = gameState[x][y]; // assigning the clicked element to the tempPosition 
-        gameState[x][y] = gameState[emptyX][emptyY];
-        gameState[emptyX][emptyY] = tempPosition;
-
         console.log(gameState);
     };
     
-    loadPuzzleChange(puzzleBoard, gameState)
+    
     getPiecePosition();
 })
