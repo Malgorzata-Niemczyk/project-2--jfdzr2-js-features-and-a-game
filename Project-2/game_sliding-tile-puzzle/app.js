@@ -43,11 +43,25 @@ puzzleBoard.addEventListener('click', (event) => {
             })
         });
 
+        // checking whether the clicked element has an empty element in the same column and in an above or below row (e.g. when clickec on 6), or in the same row and in a next or previous column (when clicked on 8)
+        if (
+            ((y === emptyY) && (x + 1 === emptyX || x - 1 === emptyX)) || 
+            ((x === emptyX) && (y + 1 === emptyY || y - 1 === emptyY))
+        ) {
+            console.log('This move is allowed');
+        } else {
+            console.log('This move is not allowed');
+        };
+
+
         // switching the empty element with a clicked element
-        const tempPosition = gameState[x][y]; // assigning to the tempPosition the clicked element
+        const tempPosition = gameState[x][y]; // assigning the clicked element to the tempPosition 
         gameState[x][y] = gameState[emptyX][emptyY];
         gameState[emptyX][emptyY] = tempPosition;
-    };
 
+        console.log(gameState);
+    };
+    
+    loadPuzzleChange(puzzleBoard, gameState)
     getPiecePosition();
 })
