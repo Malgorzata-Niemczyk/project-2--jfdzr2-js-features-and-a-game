@@ -9,12 +9,17 @@ const gameState = [
 
 
 function loadPuzzleChange(puzzleBoard, gameState) {
-    gameState.forEach((row) => {
-        row.forEach((column) => {
+    gameState.forEach((row, rowIndex) => {
+        row.forEach((column, columnIndex) => {
+            column.style.top = `${rowIndex * 200}px`; // positioning pieces vertically by multiplying the row number/index with a height of the puzzle piece
+            column.style.left = `${columnIndex * 200}px`; // positioning pieces horizontally by multiplying the column number/index with a width of the puzzle piece
+
             puzzleBoard.appendChild(column);
         })
     })
 };
+
+loadPuzzleChange(puzzleBoard, gameState);
 
 puzzleBoard.addEventListener('click', (event) => {
 // searching for the clicked element - getting its position, that is, its row and column index
@@ -52,7 +57,7 @@ puzzleBoard.addEventListener('click', (event) => {
             const tempPosition = gameState[x][y]; // assigning the clicked element to the tempPosition 
             gameState[x][y] = gameState[emptyX][emptyY];
             gameState[emptyX][emptyY] = tempPosition;
-            loadPuzzleChange(puzzleBoard, gameState)
+            loadPuzzleChange(puzzleBoard, gameState);
 
             console.log('This move is allowed');
         } else {
