@@ -21,6 +21,7 @@ body {
 h1 {
     text-shadow: -3px -3px 5px #000;
     text-align: center;
+    padding: 20px;
 }
 
 h1 span:first-child {
@@ -111,7 +112,7 @@ h1 span:last-child {
 #piece-33 {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    background-color: rgb(212, 209, 205);
+    border: none;
 }
 
 #launch, #moves {
