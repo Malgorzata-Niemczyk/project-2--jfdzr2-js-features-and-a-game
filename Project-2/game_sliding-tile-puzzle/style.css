@@ -61,6 +61,8 @@ h1 span:last-child {
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 40px;
+    color: transparent;
+    box-shadow: -4px -4px 4px #000;
 }
 
 #piece-11 {
