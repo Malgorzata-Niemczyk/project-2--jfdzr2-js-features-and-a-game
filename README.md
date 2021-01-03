@@ -2,22 +2,14 @@
 
 # jfdzr2-project-2
 
+This is a 7 week long project done during my second module at InfoShare Academy. The project goal is to build at least two mini apps and a game using JavaScript. Over the course of the project I have built:
 
-[Link to Feature 1](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/image_slider/index.html) - Image Slider
+- [Feature 1 - Image Slider](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/image_slider/index.html)
 
-![](screenshots/img-slider.png)
+- [Feature 2 - Accordion](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/accordion/index.html)
 
-[Link to Feature 2](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/accordion/index.html) - Accordion
+- [Feature 3 - Notepad](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/notepad/index.html)
 
-![](screenshots/accordion.png)
+- [Game - Sliding Tile Puzzle (WIP)](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/game_sliding-tile-puzzle/index.html)
 
-[Link to Feature 3](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/notepad/index.html) - Notepad
-
-![](screenshots/my-awesome-notes.png)
-
-[Link to Game](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/game_sliding-tile-puzzle/index.html) - Sliding Tile Puzzle (WIP)
-
-
-This is a 7 week long project, on which I am currently working, during my second module at InfoShare Academy. The project goal is to build at least two mini apps and a game using JavaScript.
-
-So far I have built an accordion, a slider and a notepad.
+![](screenshots/project-2-preview.png)
