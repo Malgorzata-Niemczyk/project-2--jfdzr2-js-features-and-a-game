@@ -63,6 +63,7 @@ h1 span:last-child {
     font-size: 40px;
     color: transparent;
     box-shadow: -4px -4px 4px #000;
+    cursor: pointer;
     transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
@@ -119,6 +120,7 @@ h1 span:last-child {
     grid-row: 3 / 4;
     border: none;
     box-shadow: none;
+    cursor: default;
 }
 
 #launch, #moves {
