@@ -85,21 +85,27 @@ puzzleBoard.addEventListener('click', (event) => {
 
 const newGameBtn = document.querySelector('#launch');
 
-const sufflePuzzlePieces = (gameState) =>  {
-  // looping over the gameState array
-  for (let i = 0; i < gameState.length; i++) {
-    let newPos = Math.floor(Math.random() * gameState.length);
-    let temp;
-    let currentGame = gameState[i];
-    let randomGame = gameState[newPos];
+function sufflePuzzlePieces(arr)  {
+    // looping over the gameState array
+  for (let i = 0; i <= arr.length; i++) {
 
-    // swapping puzzle pieces
-    temp = currentGame;
-    gameState[i] = randomGame;
-    gameState[randomGame] = temp;
-  }
+    for (let j = 0; j <= arr[i].length; j++) {
+        console.log(i, arr[i].length, arr[i][j])
 
-  return gameState;
-}
+        let randomRowIndex = Math.floor(Math.random() * arr.length + 1);
+        let randomColumnIndex = Math.floor(Math.random() * arr[i].length + 1);
+       
+        let temp;
+        let currentGame = arr[i][j];
+        let randomGame = arr[randomRowIndex][randomColumnIndex];
+    
+        // swapping puzzle pieces
+        temp = currentGame;
+        arr[i][j] = randomGame;
+        arr[randomRowIndex][randomColumnIndex] = temp; 
+    }
+  } 
+  return arr;
+};
 
-newGameBtn.addEventListener('click', sufflePuzzlePieces);
+newGameBtn.addEventListener('click', () => sufflePuzzlePieces(gameState));
