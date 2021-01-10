@@ -12,6 +12,12 @@ const gameState = [
 
 let movesCounter = 0;
 
+// setting variable for the timer
+let sec = 0;
+let min = 0;
+let hour = 0;
+let timerState = false;
+
 /***********************************/
 //TO RENDER THE PUZZLE BOARD
 /***********************************/
@@ -96,6 +102,31 @@ puzzleBoard.addEventListener('click', (event) => {
 })
 
 
+/***********************************/
+// ADDING TIMER
+/***********************************/
+function startTimer() {
+    if (timerState === false) {
+        timerState = setInterval(formatTimer, 1000);
+    }      
+};
+
+function formatTimer() { 
+    sec++
+    
+    if (sec === 59) {
+        sec = 0;
+        min++;
+    };
+
+    if (min === 59) {
+        min = 0;
+        hour++;
+    };
+
+    timerDisplay.innerHTML = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min) + ":" + (sec < 10 ? `0${sec}` : sec); // add zeros if less than 10 and add the timer numbers to the HTML
+};
+
 
 /***********************************/
 //SHUFFLING THE PUZZLE PIECES
@@ -133,6 +164,7 @@ function shufflePuzzlePieces(arr)  {
 newGameBtn.addEventListener('click', () => {
     // console.log('new order', shufflePuzzlePieces(gameState));
     const newGameState = shufflePuzzlePieces(gameState);
+    startTimer();
 
     // to reset the state of the game
     loadPuzzleChange(puzzleBoard, newGameState);
