@@ -116,9 +116,9 @@ function shufflePuzzlePieces(arr)  {
 };
 
 newGameBtn.addEventListener('click', () => {
-    console.log('new order', shufflePuzzlePieces(gameState));
-    shufflePuzzlePieces(gameState);
+    // console.log('new order', shufflePuzzlePieces(gameState));
+    const newGameState = shufflePuzzlePieces(gameState);
 
     // to reset the state of the game
-    loadPuzzleChange(puzzleBoard, gameState);
+    loadPuzzleChange(puzzleBoard, newGameState);
 });
