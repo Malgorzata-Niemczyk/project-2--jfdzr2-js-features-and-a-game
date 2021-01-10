@@ -85,27 +85,40 @@ puzzleBoard.addEventListener('click', (event) => {
 
 const newGameBtn = document.querySelector('#launch');
 
-function sufflePuzzlePieces(arr)  {
+// to calculate a random index for the array
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+function shufflePuzzlePieces(arr)  {
     // looping over the gameState array
-  for (let i = 0; i <= arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
 
-    for (let j = 0; j <= arr[i].length; j++) {
-        console.log(i, arr[i].length, arr[i][j])
+    for (let j = 0; j < arr[i].length; j++) {
+        // console.log(i, arr[i].length, arr[i][j])
 
-        let randomRowIndex = Math.floor(Math.random() * arr.length + 1);
-        let randomColumnIndex = Math.floor(Math.random() * arr[i].length + 1);
+        let randomRowIndex = getRandomInt(0, 2);
+        let randomColumnIndex = getRandomInt(0, 2);
        
         let temp;
-        let currentGame = arr[i][j];
-        let randomGame = arr[randomRowIndex][randomColumnIndex];
+        let currentTile = arr[i][j];
+        let randomTile = arr[randomRowIndex][randomColumnIndex];
     
         // swapping puzzle pieces
-        temp = currentGame;
-        arr[i][j] = randomGame;
+        temp = currentTile;
+        arr[i][j] = randomTile;
         arr[randomRowIndex][randomColumnIndex] = temp; 
     }
   } 
   return arr;
 };
 
-newGameBtn.addEventListener('click', () => sufflePuzzlePieces(gameState));
+newGameBtn.addEventListener('click', () => {
+    console.log('new order', shufflePuzzlePieces(gameState));
+    shufflePuzzlePieces(gameState);
+
+    // to reset the state of the game
+    loadPuzzleChange(puzzleBoard, gameState);
+});
