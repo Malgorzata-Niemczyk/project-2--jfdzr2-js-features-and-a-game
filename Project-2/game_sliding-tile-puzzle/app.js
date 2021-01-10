@@ -173,12 +173,26 @@ function shufflePuzzlePieces(arr)  {
 
 newGameBtn.addEventListener('click', () => {
     // console.log('new order', shufflePuzzlePieces(gameState));
-    const newGameState = shufflePuzzlePieces(gameState);
-    startTimer();
+    if (timerState !== false) {
+        movesCounter = 0;
 
-    // to reset the state of the game
-    loadPuzzleChange(puzzleBoard, newGameState);
+        resetTimer()
+        // reset the board with the number of moves
+        movesDisplay.textContent = '0';
 
-    // reset the board with the number of moves
-    movesDisplay.textContent = '0';
+        startTimer();
+        const newGameState = shufflePuzzlePieces(gameState);
+
+        // to reset the state of the game
+        loadPuzzleChange(puzzleBoard, newGameState);
+
+    } else {
+        startTimer();
+        const newGameState = shufflePuzzlePieces(gameState);
+
+        // to reset the state of the game
+        loadPuzzleChange(puzzleBoard, newGameState);
+
+        movesDisplay.textContent = '0';
+    }
 });
