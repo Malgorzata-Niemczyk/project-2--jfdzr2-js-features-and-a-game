@@ -182,17 +182,18 @@ newGameBtn.addEventListener('click', () => {
 
         startTimer();
         const newGameState = shufflePuzzlePieces(gameState);
-
+        
         // to reset the state of the game
         loadPuzzleChange(puzzleBoard, newGameState);
-
+        
     } else {
         startTimer();
         const newGameState = shufflePuzzlePieces(gameState);
-
+        
         // to reset the state of the game
         loadPuzzleChange(puzzleBoard, newGameState);
-
+        
+        newGameBtn.textContent = 'Restart Game'
         movesDisplay.textContent = '0';
     }
 });
