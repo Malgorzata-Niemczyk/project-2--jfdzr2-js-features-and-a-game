@@ -123,7 +123,12 @@ h1 span:last-child {
     cursor: default;
 }
 
-#launch {
+.moves-and-time {
+    display: flex;
+    text-align: center;
+}
+
+#launch, .moves, .time {
     margin: 25px 10px;
     padding: 15px 25px;
     background-color: #9e8fb2;
