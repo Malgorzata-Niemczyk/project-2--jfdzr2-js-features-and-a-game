@@ -1,5 +1,8 @@
 const puzzlePieces = document.querySelectorAll('.pieces');
 const puzzleBoard = document.querySelector('#puzzle-container');
+const newGameBtn = document.querySelector('#launch');
+const movesDisplay = document.querySelector('.moves p span');
+const timerDisplay = document.querySelector('.time p span');
 
 const gameState = [
     [puzzlePieces[0], puzzlePieces[1], puzzlePieces[2]],
@@ -7,7 +10,11 @@ const gameState = [
     [puzzlePieces[6], puzzlePieces[7], puzzlePieces[8]],
 ];
 
+let movesCounter = 0;
 
+/***********************************/
+//TO RENDER THE PUZZLE BOARD
+/***********************************/
 function loadPuzzleChange(puzzleBoard, gameState) {
     gameState.forEach((row, rowIndex) => {
         row.forEach((column, columnIndex) => {
@@ -32,6 +39,9 @@ function movePuzzlePiece(piece1, piece2) {
     piece2.style.left = tempLeftPosition;
 };
 
+/***********************************/
+//DEFINING THE POSITION OF A CLICKED ELEMENT AND SETTING WHICH MOVES ARE ALLOWED
+/***********************************/
 puzzleBoard.addEventListener('click', (event) => {
 // searching for the clicked element - getting its position, that is, its row and column index
     function getPiecePosition() {
@@ -76,15 +86,20 @@ puzzleBoard.addEventListener('click', (event) => {
             console.log('This move is not allowed');
         };
 
-        console.log(gameState);
+        // console.log(gameState);
     };
     
     getPiecePosition();
+
+    movesCounter++;
+    movesDisplay.textContent = movesCounter;
 })
 
 
-const newGameBtn = document.querySelector('#launch');
 
+/***********************************/
+//SHUFFLING THE PUZZLE PIECES
+/***********************************/
 // to calculate a random index for the array
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -121,4 +136,7 @@ newGameBtn.addEventListener('click', () => {
 
     // to reset the state of the game
     loadPuzzleChange(puzzleBoard, newGameState);
+
+    // reset the board with the number of moves
+    movesDisplay.textContent = '0';
 });
