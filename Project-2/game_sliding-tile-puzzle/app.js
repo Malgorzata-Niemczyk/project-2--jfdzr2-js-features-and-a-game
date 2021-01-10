@@ -103,7 +103,7 @@ puzzleBoard.addEventListener('click', (event) => {
 
 
 /***********************************/
-// ADDING TIMER
+// ADDING TIMER FUNCTIONALITY
 /***********************************/
 function startTimer() {
     if (timerState === false) {
@@ -124,9 +124,19 @@ function formatTimer() {
         hour++;
     };
 
-    timerDisplay.innerHTML = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min) + ":" + (sec < 10 ? `0${sec}` : sec); // add zeros if less than 10 and add the timer numbers to the HTML
+    timerDisplay.textContent = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min) + ":" + (sec < 10 ? `0${sec}` : sec); // add zeros if less than 10 and add the timer numbers to the HTML
 };
 
+
+function resetTimer() {
+    clearInterval(timerState);
+    timerState = false;
+    sec = 0;
+    min = 0;
+    hour = 0;
+    
+    timerDisplay.textContent = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min) + ":" + (sec < 10 ? `0${sec}` : sec);
+}
 
 /***********************************/
 //SHUFFLING THE PUZZLE PIECES
