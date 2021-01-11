@@ -3,6 +3,7 @@ const puzzleBoard = document.querySelector('#puzzle-container');
 const newGameBtn = document.querySelector('#launch');
 const movesDisplay = document.querySelector('.moves p span');
 const timerDisplay = document.querySelector('.time p span');
+const winPopup = document.querySelector('.win-modal');
 
 const gameState = [
     [puzzlePieces[0], puzzlePieces[1], puzzlePieces[2]],
@@ -87,9 +88,10 @@ puzzleBoard.addEventListener('click', (event) => {
             gameState[x][y] = gameState[emptyX][emptyY];
             gameState[emptyX][emptyY] = tempPosition;
 
-            console.log('This move is allowed');
+            // console.log('This move is allowed');
         } else {
-            console.log('This move is not allowed');
+            // console.log('This move is not allowed');
+            movesCounter--;
         };
 
         // console.log(gameState);
@@ -193,7 +195,42 @@ newGameBtn.addEventListener('click', () => {
         // to reset the state of the game
         loadPuzzleChange(puzzleBoard, newGameState);
         
+        winPopup.style.visibility = 'hidden';
         newGameBtn.textContent = 'Restart Game'
         movesDisplay.textContent = '0';
     }
 });
+
+/***********************************/
+//SHOW THE CONGRATS POPUP UPON SOLVING THE PUZZLE
+/***********************************/
+function isSolved(gameState) {
+    return (
+        gameState[0][0] === 0 &&
+        gameState[0][1] === 1 &&
+        gameState[0][2] === 2 &&
+        gameState[1][0] === 3 &&
+        gameState[1][1] === 4 &&
+        gameState[1][2] === 5 &&
+        gameState[2][0] === 6 &&
+        gameState[2][1] === 7 &&
+        gameState[2][2] === 8
+    )
+};
+
+function checkWin() {
+    if (isSolved(gameState) === true) {
+        winPopup.style.visibility = 'visible';
+        winPopup.innerHTML = `
+        <p>Congratulations, you solved it with time ${timerDisplay} and ${movesCounter} moves!</p>
+        <p><i class="fas fa-medal"></i></p> -->
+        `
+        newGameBtn.textContent = 'Start Game';
+        movesCounter = 0;
+        resetTimer();
+        // to reset the state of the game
+        loadPuzzleChange(puzzleBoard, gameState);
+    }
+};
+
+checkWin()
