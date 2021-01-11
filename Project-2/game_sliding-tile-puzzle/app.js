@@ -35,6 +35,9 @@ function loadPuzzleChange(puzzleBoard, gameState) {
 
 loadPuzzleChange(puzzleBoard, gameState);
 
+/***********************************/
+//DEFINING THE POSITION OF A CLICKED ELEMENT AND SETTING WHICH MOVES ARE ALLOWED
+/***********************************/
 function movePuzzlePiece(piece1, piece2) {
     const tempTopPosition = piece1.style.top;
     const tempLeftPosition = piece1.style.left;
@@ -46,9 +49,6 @@ function movePuzzlePiece(piece1, piece2) {
     piece2.style.left = tempLeftPosition;
 };
 
-/***********************************/
-//DEFINING THE POSITION OF A CLICKED ELEMENT AND SETTING WHICH MOVES ARE ALLOWED
-/***********************************/
 puzzleBoard.addEventListener('click', (event) => {
 // searching for the clicked element - getting its position, that is, its row and column index
     function getPiecePosition() {
