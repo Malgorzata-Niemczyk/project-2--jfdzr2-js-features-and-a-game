@@ -148,3 +148,20 @@ h1 span:last-child {
     color: rgb(216, 212, 212);
     background: rgb(66, 65, 65);
 }
+
+.win-modal {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    padding: 20px 40px;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: -2px -2px 5px #000;
+    text-align: center;
+    background-color: orange;
+}
+
+.win-modal p i {
+    font-size: 8rem;
+    padding-top: 20px;
+}
