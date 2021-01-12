@@ -9,6 +9,7 @@ const nextBtnElement = document.querySelector('.next-btn');
 
 let counter = 0;
 const slideWidth = slideElements[0].clientWidth;
+let autoPlay;
 
 //Functions to change images left and right when clicking on arrow buttons
 function nextSlide() {
@@ -64,7 +65,23 @@ function transitionLoop() {
     }
 }
 
+function startAutoSlideShow() {
+    // console.log('Start autoplay');
+    autoPlay = setInterval(nextSlide, 3000);
+};
+
+function stopAutoSlideShow() {
+    // console.log('Stop autoplay');
+    clearInterval(autoPlay);
+};
+
 //Buttons events 
 nextBtnElement.addEventListener('click', nextSlide);
 prevBtnElement.addEventListener('click', prevSlide);
 slidesCarouselWrapper.addEventListener('transitionend', transitionLoop);
+
+slidesCarouselWrapper.addEventListener('mouseleave', startAutoSlideShow); // to start the autoplay of the slides when hovering on the slide
+slidesCarouselWrapper.addEventListener('mouseover', stopAutoSlideShow); // to clear the autoplay of the slides when hovering away from the slide
+prevBtnElement.addEventListener('click', stopAutoSlideShow);
+nextBtnElement.addEventListener('click', stopAutoSlideShow);
+window.onload = startAutoSlideShow()
