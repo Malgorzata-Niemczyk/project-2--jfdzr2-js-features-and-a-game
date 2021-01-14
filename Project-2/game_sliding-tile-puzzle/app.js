@@ -20,6 +20,38 @@ let hour = 0;
 let timerState = false;
 
 /***********************************/
+//SHOW THE CONGRATS POPUP UPON SOLVING THE PUZZLE
+/***********************************/
+function isSolved(gameState) {
+    return (
+        gameState[0][0] === 0 &&
+        gameState[0][1] === 1 &&
+        gameState[0][2] === 2 &&
+        gameState[1][0] === 3 &&
+        gameState[1][1] === 4 &&
+        gameState[1][2] === 5 &&
+        gameState[2][0] === 6 &&
+        gameState[2][1] === 7 &&
+        gameState[2][2] === 8
+    )
+};
+
+function checkWin() {
+    if (isSolved(gameState) === true) {
+        winPopup.style.visibility = 'visible';
+        winPopup.innerHTML = `
+        <p>Congratulations, you solved it with time ${timerDisplay} and ${movesCounter} moves!</p>
+        <p><i class="fas fa-medal"></i></p> -->
+        `
+        newGameBtn.textContent = 'Start Game';
+        movesCounter = 0;
+        resetTimer();
+        // to reset the state of the game
+        loadPuzzleChange(puzzleBoard, gameState);
+    }
+};
+
+/***********************************/
 //TO RENDER THE PUZZLE BOARD
 /***********************************/
 function loadPuzzleChange(puzzleBoard, gameState) {
@@ -101,6 +133,8 @@ puzzleBoard.addEventListener('click', (event) => {
 
     movesCounter++;
     movesDisplay.textContent = movesCounter;
+
+    checkWin();
 })
 
 
@@ -200,37 +234,3 @@ newGameBtn.addEventListener('click', () => {
         movesDisplay.textContent = '0';
     }
 });
-
-/***********************************/
-//SHOW THE CONGRATS POPUP UPON SOLVING THE PUZZLE
-/***********************************/
-function isSolved(gameState) {
-    return (
-        gameState[0][0] === 0 &&
-        gameState[0][1] === 1 &&
-        gameState[0][2] === 2 &&
-        gameState[1][0] === 3 &&
-        gameState[1][1] === 4 &&
-        gameState[1][2] === 5 &&
-        gameState[2][0] === 6 &&
-        gameState[2][1] === 7 &&
-        gameState[2][2] === 8
-    )
-};
-
-function checkWin() {
-    if (isSolved(gameState) === true) {
-        winPopup.style.visibility = 'visible';
-        winPopup.innerHTML = `
-        <p>Congratulations, you solved it with time ${timerDisplay} and ${movesCounter} moves!</p>
-        <p><i class="fas fa-medal"></i></p> -->
-        `
-        newGameBtn.textContent = 'Start Game';
-        movesCounter = 0;
-        resetTimer();
-        // to reset the state of the game
-        loadPuzzleChange(puzzleBoard, gameState);
-    }
-};
-
-checkWin()
