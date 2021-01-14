@@ -7,7 +7,7 @@ accordionHeaderElements.forEach(accordionHeaderElement => {
         const currentlyActiveAccordionHeaderElement = document.querySelector('.accordion-item-header.active');
         if (currentlyActiveAccordionHeaderElement && currentlyActiveAccordionHeaderElement !== accordionHeaderElement) {
             currentlyActiveAccordionHeaderElement.classList.remove('active');
-            currentlyActiveAccordionHeaderElement.nextElementSibling.style.maxHeight = 0;
+            currentlyActiveAccordionHeaderElement.nextElementSibling.style.maxWidth = 0;
         }
 
         //to toggle an active class on an element with a class of accordion-item-header
@@ -17,9 +17,9 @@ accordionHeaderElements.forEach(accordionHeaderElement => {
         const accordionBodyElements = accordionHeaderElement.nextElementSibling;
 
         if (accordionHeaderElement.classList.contains('active')) {
-            accordionBodyElements.style.maxHeight = accordionBodyElements.scrollHeight + 'px';
+            accordionBodyElements.style.maxWidth = accordionBodyElements.scrollWidth + 'px';
         } else {
-            accordionBodyElements.style.maxHeight = 0;
+            accordionBodyElements.style.maxWidth = 0;
         }
     })
 })
