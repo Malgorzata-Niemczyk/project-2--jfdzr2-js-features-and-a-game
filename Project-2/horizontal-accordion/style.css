@@ -5,15 +5,18 @@
 }
 
 body {
+    min-height: 100vh;
     padding-bottom: 25px;
     font-family: 'Raleway', sans-serif;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
 header h1 {
     display: flex;
     justify-content: center;
     color: #fff;
-    text-shadow: 2px 2px 3px #000;
+    text-shadow: -2px -2px 2px #fff;
     padding: 35px;
     font-size: 50px;
 }
@@ -44,7 +47,6 @@ header h1 {
     color: #fff;
     text-shadow: 2px 2px 3px #000;
     cursor: pointer;
-    
     transition: transform 0.3s ease-in-out;
 }
 
@@ -53,14 +55,34 @@ header h1 {
     transform: rotate(180deg);
 }
 
-.accordion-item:nth-child(odd) {
-    background-color: #ebcb00;
-    background: linear-gradient(to right, #ebcb00 0%, #e15151 100%);
+.accordion-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
-.accordion-item:nth-child(even) {
-    background-color: #010104;
-    background: linear-gradient(to right, #010104 0%, #cec5c9 100%);
+.accordion-item:nth-child(1), .accordion-item:nth-child(2) {
+    background-position: 80%;
+}
+
+.accordion-item:nth-child(1) {
+    background-image: url('./img/spices-2548490_1280.jpg');
+}
+
+.accordion-item:nth-child(2) {
+    background-image: url('./img/vegetables-790022_1280.jpg');
+}
+
+.accordion-item:nth-child(3) {
+    background-image: url('./img/vegetable-juices-1725835_1280.jpg');
+}
+
+.accordion-item:nth-child(4) {
+    background-image: url('./img/cooking-2132874_1280.jpg');
+}
+
+.accordion-item:nth-child(5) {
+    background-image: url('./img/eclair-3366430_1280.jpg');
 }
 
 .accordion-item-header p i {
@@ -70,6 +92,11 @@ header h1 {
 
 .accordion-item-header.active p i {
     transform: rotate(-180deg);  
+}
+
+header h1, .accordion-item-header h2, .accordion-item-header p i {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .accordion-item-body {
