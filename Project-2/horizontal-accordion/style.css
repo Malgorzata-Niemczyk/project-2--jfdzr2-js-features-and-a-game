@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: 25px;
+    font-family: 'Raleway', sans-serif;
+    background-image: url('./img/vegies-2364221_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000;
+    padding: 35px;
+    font-size: 50px;
+}
+
+.accordion-wrapper {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #000;
+}
+
+.accordion-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item:nth-child(odd) {
+    background-color: #ebcb00;
+    background: linear-gradient(to right, #ebcb00 0%, #e15151 100%);
+}
+
+.accordion-item:nth-child(even) {
+    background-color: #010104;
+    background: linear-gradient(to right, #010104 0%, #cec5c9 100%);
+}
+
+.accordion-item-header p i {
+    font-size: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item-header.active {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.accordion-item-header.active p i {
+    transform: rotate(180deg);  
+}
+
+.accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-item-body-content {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 2px solid black;
+}
+
+.accordion-item-body-content h3 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.accordion-item-body-content ul li {
+    list-style-position: inside;
+}
