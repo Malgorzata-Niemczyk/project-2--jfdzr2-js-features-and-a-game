@@ -5,13 +5,8 @@
 }
 
 body {
-    min-height: 100vh;
     padding-bottom: 25px;
     font-family: 'Raleway', sans-serif;
-    background-image: url('./img/vegies-2364221_1920.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
 }
 
 header h1 {
@@ -24,28 +19,38 @@ header h1 {
 }
 
 .accordion-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     max-width: 1000px;
     margin: auto;
 }
 
 .accordion-item {
+    display: flex;
+    max-height: 500px;
     margin-bottom: 15px;
-    border-radius: 10px;
     box-shadow: 5px 5px 5px #000;
+    margin: 5px;
 }
 
 .accordion-item-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    width: 150px;
+    padding: 30px;
     color: #fff;
     text-shadow: 2px 2px 3px #000;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     cursor: pointer;
+    
     transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item-header h2 {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
 }
 
 .accordion-item:nth-child(odd) {
@@ -63,27 +68,22 @@ header h1 {
     transition: transform 0.3s ease-in-out;
 }
 
-.accordion-item-header.active {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
 .accordion-item-header.active p i {
-    transform: rotate(180deg);  
+    transform: rotate(-180deg);  
 }
 
 .accordion-item-body {
-    max-height: 0;
+    max-width: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-width 0.3s ease-in-out;
 }
 
 .accordion-item-body-content {
     padding: 20px;
+    width: 500px;
+    height: 500px;
+    text-align: justify;
     background-color: #fff;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top: 2px solid black;
 }
 
 .accordion-item-body-content h3 {
