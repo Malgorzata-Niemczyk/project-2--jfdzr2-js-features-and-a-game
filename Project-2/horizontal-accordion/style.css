@@ -7,9 +7,9 @@
 body {
     min-height: 100vh;
     padding-bottom: 25px;
-    font-family: 'Raleway', sans-serif;
-    background-color: #485461;
-    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    font-family: 'Raleway', sans-serif;  
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
 }
 
 header h1 {
