@@ -9,8 +9,8 @@ const categorySelection = document.querySelector('#category');
 const textArea = document.querySelector('#text'); 
 const errorMessage = document.querySelector('.error');
 
-let $selectedValue;
-let $cardID = 0;
+let selectedValue;
+let cardID = 0;
 
 //function for opening the note panel element when clicking the add button
 function openPanel() {
@@ -39,16 +39,16 @@ function addNote() {
 
 /*function for creating a new note and appending it to the div tag with a class of note; upon adding a new note when clicking the save button the function also clears the value of the textArea, sets display of the notePanel to none and set the selectedIndex of the categorySelection element to zero*/
 const createNote = () => {
-    $cardID++;
+    cardID++;
     const noteWrapper = document.createElement('div');
     noteWrapper.classList.add('note');
-    noteWrapper.setAttribute('id', $cardID);
+    noteWrapper.setAttribute('id', cardID);
     noteArea.appendChild(noteWrapper);
     
     noteWrapper.innerHTML = `
         <div class="note-header">
-            <h3 class="note-title">${$selectedValue}</h3>
-            <button class="delete-note" onclick="deleteNote(${$cardID})">
+            <h3 class="note-title">${selectedValue}</h3>
+            <button class="delete-note" onclick="deleteNote(${cardID})">
                 <i class="far fa-times-circle"></i>
             </button>
         </div>
@@ -57,21 +57,32 @@ const createNote = () => {
         </div>
     `
 
+     // saving data to localStorage
+     localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(`${textArea.value}`));
+
+     //getting data from localStorage
+     const savedNotes = JSON.parse(localStorage.getItem(`${selectedValue} ${cardID}`));
+
+     if (savedNotes) {
+         textArea.value = savedNotes;
+     };
+
+     // clearing the modal after pressing the save button
     textArea.value = '';
     categorySelection.selectedIndex = 0;
     notePanel.style.display = 'none';
 
-    checkColor(noteWrapper); /* triggering the  CheckColor function that checks what value is stored in the $selectedValue variable when creating a new note */
+    checkColor(noteWrapper); /* triggering the  CheckColor function that checks what value is stored in the selectedValue variable when creating a new note */
 };
 
-//function for assinging the value to the global variable $selectedValue
+//function for assinging the value to the global variable selectedValue
 const selectValue = () => {
-    $selectedValue = categorySelection.options[categorySelection.selectedIndex].text;
+    selectedValue = categorySelection.options[categorySelection.selectedIndex].text;
 };
 
-/*function that checks what text has been chosen within the $selectedValue element and dependent on the value of the $selectedvalue variable it changes the color of a new note added to the noteArea*/
+/*function that checks what text has been chosen within the selectedValue element and dependent on the value of the selectedvalue variable it changes the color of a new note added to the noteArea*/
 const checkColor = (note) => {
-    switch ($selectedValue) {
+    switch (selectedValue) {
         case 'Shopping':
             note.style.backgroundColor = 'orange';
             break;
@@ -91,11 +102,17 @@ const checkColor = (note) => {
 function deleteNote(id) {
     const noteToBeDeleted = document.getElementById(id);
     noteArea.removeChild(noteToBeDeleted);
+
+    // deleting an item from localStorage
+    localStorage.removeItem(`${selectedValue} ${cardID}`);
 };
 
 //deleting all the notes from the div with a class of note-area
 function deleteAllNotes() {
     noteArea.textContent = '';
+
+    //clearing the whole localStorage
+    localStorage.clear(`${selectedValue} ${cardID}`);
 };
 
 //event listeners
