@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Tile Puzzle</title>
+    <script src="https://kit.fontawesome.com/6e1e617458.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     
     <h1><span>Sliding</span><span>Tile</span><span>Puzzle</span></h1>
 
+    <div class="win-modal">
+        <!-- <p>Congratulations, you solved it with time 00:02:46 and 45 moves!</p>
+        <p><i class="fas fa-medal"></i></p> -->
+    </div>
+
+    <div class="moves-and-time">
+        <div class="moves">
+            <p>Moves: <span>0</span></p>
+        </div>
+        <div class="time">
+            <p>Time: <span>00:00:00</span></p>
+        </div>
+    </div>
+    
     <article id="puzzle-container">
         <div class="pieces" id="piece-11">1</div>
         <div class="pieces" id="piece-12">2</div>
@@ -22,7 +37,7 @@
         <div class="pieces" id="piece-33"></div>
     </article>
 
-    <button id="launch">New Game</button>
+    <button id="launch">Start Game</button>
 
     <script src="./app.js"></script>
 </body>
