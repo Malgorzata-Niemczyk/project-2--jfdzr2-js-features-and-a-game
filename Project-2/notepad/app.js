@@ -97,20 +97,6 @@ function updateLocalStorage() {
     localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(notesArr));
 };
 
-// function updateLocalStorage() {
-//     let notesText = document.querySelectorAll('.note-body > p');
-
-//     notesText.textContent = textArea.value;
-//     console.log(notesText);
-
-//     const notesArr = [];
-
-//     notesText.forEach(note => notesArr.push(notesText.textContent));
-//     console.log(notesArr)
-
-//     localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(notesArr));
-// };
-
 //function for assinging the value to the global variable selectedValue
 const selectValue = () => {
     selectedValue = categorySelection.options[categorySelection.selectedIndex].text;
