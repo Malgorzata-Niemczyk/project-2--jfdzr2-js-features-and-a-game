@@ -12,6 +12,15 @@ const errorMessage = document.querySelector('.error');
 let selectedValue;
 let cardID = 0;
 
+//getting data from localStorage
+const savedNotes = JSON.parse(localStorage.getItem(`${selectedValue} ${cardID}`));
+// console.log(savedNotes);
+
+// checking if the data in localStorage exists and if so add each data to the DOM
+if(savedNotes) {
+    savedNotes.forEach(note => addNote(note));
+};
+
 //function for opening the note panel element when clicking the add button
 function openPanel() {
     notePanel.style.display = 'flex';
@@ -53,27 +62,54 @@ const createNote = () => {
             </button>
         </div>
         <div class="note-body">
-            <p>${textArea.value}</p>
+            <p>${addNoteText()}</p>
         </div>
     `
+    updateLocalStorage();
 
-     // saving data to localStorage
-     localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(`${textArea.value}`));
-
-     //getting data from localStorage
-     const savedNotes = JSON.parse(localStorage.getItem(`${selectedValue} ${cardID}`));
-
-     if (savedNotes) {
-         textArea.value = savedNotes;
-     };
-
-     // clearing the modal after pressing the save button
+    // clearing the modal after pressing the save button
     textArea.value = '';
     categorySelection.selectedIndex = 0;
     notePanel.style.display = 'none';
 
     checkColor(noteWrapper); /* triggering the  CheckColor function that checks what value is stored in the selectedValue variable when creating a new note */
 };
+
+function addNoteText() {
+    textArea.addEventListener('input', (event) => {
+        // console.log(event.target.value);
+
+        let notesText = document.querySelector('.note-body > p');
+        notesText.textContent = event.target.value;
+        // console.log(notesText);
+    })
+};
+
+function updateLocalStorage() {
+    let notesText = document.querySelectorAll('.note-body > p');
+    notesText.textContent = textArea.value;
+
+    const notesArr = [];
+
+    notesText.forEach(note => notesArr.push(note.textContent));
+    // console.log(notesArr)
+
+    localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(notesArr));
+};
+
+// function updateLocalStorage() {
+//     let notesText = document.querySelectorAll('.note-body > p');
+
+//     notesText.textContent = textArea.value;
+//     console.log(notesText);
+
+//     const notesArr = [];
+
+//     notesText.forEach(note => notesArr.push(notesText.textContent));
+//     console.log(notesArr)
+
+//     localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(notesArr));
+// };
 
 //function for assinging the value to the global variable selectedValue
 const selectValue = () => {
