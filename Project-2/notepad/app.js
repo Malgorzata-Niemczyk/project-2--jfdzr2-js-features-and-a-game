@@ -12,6 +12,15 @@ const errorMessage = document.querySelector('.error');
 let selectedValue;
 let cardID = 0;
 
+//getting data from localStorage
+const savedNotes = JSON.parse(localStorage.getItem(`${selectedValue} ${cardID}`));
+// console.log(savedNotes);
+
+// checking if the data in localStorage exists and if so add each data to the DOM
+if(savedNotes) {
+    savedNotes.forEach(note => addNote(note));
+};
+
 //function for opening the note panel element when clicking the add button
 function openPanel() {
     notePanel.style.display = 'flex';
@@ -58,15 +67,15 @@ const createNote = () => {
     `
 
      // saving data to localStorage
-     localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(`${textArea.value}`));
+    let notesText = noteWrapper.querySelectorAll('.note-body > p');
+    const notesArr = [];
 
-     //getting data from localStorage
-     const savedNotes = JSON.parse(localStorage.getItem(`${selectedValue} ${cardID}`));
+    notesText.forEach(note => notesArr.push(note.textContent));
+    // console.log(notesArr)
 
-     if (savedNotes) {
-         textArea.value = savedNotes;
-     };
+    localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(notesArr));
 
+     
      // clearing the modal after pressing the save button
     textArea.value = '';
     categorySelection.selectedIndex = 0;
