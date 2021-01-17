@@ -12,14 +12,10 @@ const errorMessage = document.querySelector('.error');
 let selectedValue;
 let cardID = 0;
 
-//getting data from localStorage
-const savedNotes = JSON.parse(localStorage.getItem(`${selectedValue} ${cardID}`));
-// console.log(savedNotes);
-
-// checking if the data in localStorage exists and if so add each data to the DOM
-if(savedNotes) {
-    savedNotes.forEach(note => addNote(note));
-};
+let noteItemsArr = [];
+//retrieving data from localStorage
+noteItemsArr = noteItemsArr.concat(JSON.parse(localStorage.getItem('myNotes') || '[]'));
+// console.log(noteItemsArr);
 
 //function for opening the note panel element when clicking the add button
 function openPanel() {
@@ -48,6 +44,11 @@ function addNote() {
 
 /*function for creating a new note and appending it to the div tag with a class of note; upon adding a new note when clicking the save button the function also clears the value of the textArea, sets display of the notePanel to none and set the selectedIndex of the categorySelection element to zero*/
 const createNote = () => {
+    let noteItem = {
+        category: `${selectedValue}`,
+        content: textArea.value
+    };
+
     cardID++;
     const noteWrapper = document.createElement('div');
     noteWrapper.classList.add('note');
@@ -56,26 +57,21 @@ const createNote = () => {
     
     noteWrapper.innerHTML = `
         <div class="note-header">
-            <h3 class="note-title">${selectedValue}</h3>
+            <h3 class="note-title">${noteItem.category}</h3>
             <button class="delete-note" onclick="deleteNote(${cardID})">
                 <i class="far fa-times-circle"></i>
             </button>
         </div>
         <div class="note-body">
-            <p>${textArea.value}</p>
+            <p>${noteItem.content}</p>
         </div>
     `
 
-     // saving data to localStorage
-    let notesText = noteWrapper.querySelectorAll('.note-body > p');
-    const notesArr = [];
+    // saving data to localStorage
+    noteItemsArr.push(noteItem);
+    localStorage.setItem('myNotes', JSON.stringify(noteItemsArr));
+    //  console.log(localStorage)
 
-    notesText.forEach(note => notesArr.push(note.textContent));
-    // console.log(notesArr)
-
-    localStorage.setItem(`${selectedValue} ${cardID}`, JSON.stringify(notesArr));
-
-     
      // clearing the modal after pressing the save button
     textArea.value = '';
     categorySelection.selectedIndex = 0;
@@ -111,9 +107,6 @@ const checkColor = (note) => {
 function deleteNote(id) {
     const noteToBeDeleted = document.getElementById(id);
     noteArea.removeChild(noteToBeDeleted);
-
-    // deleting an item from localStorage
-    localStorage.removeItem(`${selectedValue} ${cardID}`);
 };
 
 //deleting all the notes from the div with a class of note-area
@@ -121,7 +114,7 @@ function deleteAllNotes() {
     noteArea.textContent = '';
 
     //clearing the whole localStorage
-    localStorage.clear(`${selectedValue} ${cardID}`);
+    localStorage.clear('myNotes');
 };
 
 //event listeners
