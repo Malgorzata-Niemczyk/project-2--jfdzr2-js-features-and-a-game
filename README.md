@@ -10,8 +10,6 @@ This is a 7 week long project done during my second module at InfoShare Academy.
 
 - [Feature 3 - Notepad](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/notepad/index.html)
 
-- [Feature 3 - Notepad with localStorage](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/feature/notepad-localStorage/Project-2/notepad/index.html)
-
 - [Game - Sliding Tile Puzzle](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/game_sliding-tile-puzzle/index.html)
 
 ![](screenshots/project-2-preview.png)
