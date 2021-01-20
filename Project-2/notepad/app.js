@@ -41,7 +41,7 @@ function renderNotes(note) {
     checkColor(noteWrapper, note.category);
         
     noteArea.appendChild(noteWrapper);
-}
+};
 
 //function for opening the note panel element when clicking the add button
 function openPanel() {
@@ -141,7 +141,7 @@ function deleteAllNotes() {
     noteArea.textContent = '';
 
     //clearing the whole localStorage
-    localStorage.clear('myNotes');
+    localStorage.clear();
 };
 
 //event listeners
