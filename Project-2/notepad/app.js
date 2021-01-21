@@ -71,6 +71,7 @@ function addNote() {
 /*function for creating a new note and appending it to the div tag with a class of note; upon adding a new note when clicking the save button the function also clears the value of the textArea, sets display of the notePanel to none and set the selectedIndex of the categorySelection element to zero*/
 function createNote() {
     let noteItem = {
+        id: cardID,
         category: `${selectedValue}`,
         content: textArea.value
     };
