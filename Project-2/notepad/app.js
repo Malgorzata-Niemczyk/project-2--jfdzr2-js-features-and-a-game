@@ -17,6 +17,32 @@ let noteItemsArr = [];
 noteItemsArr = noteItemsArr.concat(JSON.parse(localStorage.getItem('myNotes') || '[]'));
 // console.log(noteItemsArr);
 
+if (noteItemsArr) {
+    noteItemsArr.forEach(note => renderNotes(note));
+};
+
+function renderNotes(note) {
+    cardID++;
+    const noteWrapper = document.createElement("div");
+    noteWrapper.classList.add("note");
+    noteWrapper.setAttribute("id", cardID);
+    noteWrapper.innerHTML = `
+        <div class="note-header">
+            <h3 class="note-title">${note.category}</h3>
+            <button class="delete-note" onclick="deleteNote(${cardID})">
+                <i class="far fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="note-body">
+            <p>${note.content}</p>
+        </div>
+    `;
+        
+    checkColor(noteWrapper, note.category);
+        
+    noteArea.appendChild(noteWrapper);
+};
+
 //function for opening the note panel element when clicking the add button
 function openPanel() {
     notePanel.style.display = 'flex';
@@ -43,8 +69,9 @@ function addNote() {
 };
 
 /*function for creating a new note and appending it to the div tag with a class of note; upon adding a new note when clicking the save button the function also clears the value of the textArea, sets display of the notePanel to none and set the selectedIndex of the categorySelection element to zero*/
-const createNote = () => {
+function createNote() {
     let noteItem = {
+        id: cardID,
         category: `${selectedValue}`,
         content: textArea.value
     };
@@ -53,7 +80,6 @@ const createNote = () => {
     const noteWrapper = document.createElement('div');
     noteWrapper.classList.add('note');
     noteWrapper.setAttribute('id', cardID);
-    noteArea.appendChild(noteWrapper);
     
     noteWrapper.innerHTML = `
         <div class="note-header">
@@ -66,6 +92,9 @@ const createNote = () => {
             <p>${noteItem.content}</p>
         </div>
     `
+    
+    noteArea.appendChild(noteWrapper);
+    checkColor(noteWrapper, noteItem.category); /* triggering the CheckColor function that checks what value is stored in the selectedValue variable when creating a new note */
 
     // saving data to localStorage
     noteItemsArr.push(noteItem);
@@ -76,8 +105,6 @@ const createNote = () => {
     textArea.value = '';
     categorySelection.selectedIndex = 0;
     notePanel.style.display = 'none';
-
-    checkColor(noteWrapper); /* triggering the  CheckColor function that checks what value is stored in the selectedValue variable when creating a new note */
 };
 
 //function for assinging the value to the global variable selectedValue
@@ -86,19 +113,19 @@ const selectValue = () => {
 };
 
 /*function that checks what text has been chosen within the selectedValue element and dependent on the value of the selectedvalue variable it changes the color of a new note added to the noteArea*/
-const checkColor = (note) => {
-    switch (selectedValue) {
+function checkColor(noteWrapper, noteCategory) {
+    switch (noteCategory) {
         case 'Shopping':
-            note.style.backgroundColor = 'orange';
+            noteWrapper.style.backgroundColor = 'orange';
             break;
         case 'Work':
-            note.style.backgroundColor = 'rgb(35, 215, 228)';
+            noteWrapper.style.backgroundColor = 'rgb(35, 215, 228)';
             break;
         case 'Friends':
-            note.style.backgroundColor = 'tomato';
+            noteWrapper.style.backgroundColor = 'tomato';
             break;
         case 'Other':
-            note.style.backgroundColor = 'rgb(80, 230, 50)';
+            noteWrapper.style.backgroundColor = 'rgb(80, 230, 50)';
             break;
     };
 };
@@ -114,7 +141,7 @@ function deleteAllNotes() {
     noteArea.textContent = '';
 
     //clearing the whole localStorage
-    localStorage.clear('myNotes');
+    localStorage.clear();
 };
 
 //event listeners
