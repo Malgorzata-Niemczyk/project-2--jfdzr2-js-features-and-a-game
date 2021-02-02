@@ -8,7 +8,7 @@ This is a 7 week long project done during my second module at InfoShare Academy.
 
 - [Feature 2 - Vertical Accordion](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/accordion/index.html) and [Horizontal Accordion](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/horizontal-accordion/index.html)
 
-- [Feature 3 - Notepad](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/notepad/index.html)
+- [Feature 3 - Notepad with data saved in localStorage](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/notepad/index.html)
 
 - [Game - Sliding Tile Puzzle](https://malgorzata-niemczyk.github.io/jfdzr2-project-2/Project-2/game_sliding-tile-puzzle/index.html)
 
