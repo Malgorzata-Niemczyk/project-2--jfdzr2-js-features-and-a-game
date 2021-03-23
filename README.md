@@ -6,7 +6,7 @@ This is a 7 week long project done during my second module at InfoShare Academy.
 
 - [Feature 1 - Image Slider](https://malgorzata-niemczyk.github.io/project-2--jfdzr2-js-features-and-a-game/Project-2/image_slider/index.html)
 
-- [Feature 2 - Vertical Accordion](https://malgorzata-niemczyk.github.io/project-2--jfdzr2-js-features-and-a-game/Project-2/accordion/index.html) and [Horizontal Accordion](https://malgorzata-niemczyk.github.io/project-2--jfdzr2-js-features-and-a-game/horizontal-accordion/index.html)
+- [Feature 2 - Vertical Accordion](https://malgorzata-niemczyk.github.io/project-2--jfdzr2-js-features-and-a-game/Project-2/accordion/index.html) and [Horizontal Accordion](https://malgorzata-niemczyk.github.io/project-2--jfdzr2-js-features-and-a-game//Project-2/horizontal-accordion/index.html)
 
 - [Feature 3 - Notepad with data saved in localStorage](https://malgorzata-niemczyk.github.io/project-2--jfdzr2-js-features-and-a-game/Project-2/notepad/index.html)
 
